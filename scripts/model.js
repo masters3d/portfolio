@@ -81,3 +81,33 @@ function generateRandomText() {
     `
   return text;
 }
+
+Project.prototype.toHtml = function() {
+  let template =
+  `<article>
+        <header>
+          <h1>Title</h1>
+          <div class="byline">
+            By <address><a href="">Author Name</a></address>
+            published <time pubdate datetime="2000-01-01">Publish Time</time>
+          </div>
+        </header>
+        <section class="article-body"></section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+  `
+  let $newProject = $.parseHTML(template);
+  console.log($newProject);
+  //$newProject.data('category', this.type);
+  $newProject.find('address a').first().text(this.name);
+  $newProject.find('address').find('a').attr('href', this.link);
+  $newProject.find('h1').first().text(this.name);
+  $newProject.find('.article-body').first().html(this.description);
+
+  // Display the date as a relative number of 'days ago'
+  const today = new Date()
+  const publishedOn = new Date(this.date)
+  $newProject.find('time').html('about ' + parseInt((today - publishedOn)/60/60/24/1000) + ' days ago');
+  $newProject.append('<hr>');
+  return $newProject;
+};
