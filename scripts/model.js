@@ -92,7 +92,7 @@ Project.prototype.toHtml = function() {
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
   `
-  let $newProject = $('<div/>').html(template).contents()
+  let $newProject = $('<div/>').html(template).contents().clone();
   $newProject.data('category', this.type);
   $newProject.find('address a').first().text(this.name);
   $newProject.find('address').find('a').attr('href', this.link);
