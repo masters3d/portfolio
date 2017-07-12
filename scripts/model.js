@@ -96,9 +96,8 @@ Project.prototype.toHtml = function() {
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
   `
-  let $newProject = $.parseHTML(template);
-  console.log($newProject);
-  //$newProject.data('category', this.type);
+  let $newProject = $('<div/>').html(template).contents()
+  $newProject.data('category', this.type);
   $newProject.find('address a').first().text(this.name);
   $newProject.find('address').find('a').attr('href', this.link);
   $newProject.find('h1').first().text(this.name);

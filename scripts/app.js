@@ -1,7 +1,7 @@
 'use strict'
 
-let data = new Data();
+let projects = (new Data()).projects;
 
-data.projects.forEach(function(project){
+projects.forEach(function(project){
   $('#articles').append(project.toHtml());
 });
