@@ -13,7 +13,7 @@ class Project {
     this.type = type
     this.link = link
     this.description = description || generateRandomText()
-    this.image = image || 'http://lorempixel.com/400/400/'
+    this.image = image || 'http://lorempixel.com/400/400/' + '?random=' + this.name
     this.date = date || '2015-10-01'
   }
 }
@@ -21,14 +21,14 @@ class Project {
 class Data {
   constructor() {
     let projectsInfo = [
-      'art,3D Sketches,http://community.thefoundry.co.uk/community/profile.aspx?name=cheyo84',
+      'art,3D Sketches,http://community.foundry.com/profile/cheyo84,http://content.luxology.com/gallery/7faba61b214ef99f765daea6a422308e.jpg',
       'vid,Honduras 2015 Highlights - Upon this Rock Ministries,https://www.youtube.com/watch?v=waXta2PAjfc',
       'vid,Guatemala 2014 Upon This Rock Ministries,https://www.youtube.com/watch?v=VMkDSfq1ghg',
       'vid,Team returns one year after Yolanda,https://www.youtube.com/watch?v=hMHgUtxMiG8',
       'vid,Thank you vid,https://www.youtube.com/watch?v=64kGSkgOUjU',
       'vid,Change Giving to Going | Hotes Foundation,https://www.youtube.com/watch?v=8qETFdq6UN8',
       'vid,Earthquake,https://www.youtube.com/watch?v=16NcsqhRhzE',
-      'vid,THE HAITIAN PRINCE TURNS 1,https://www.youtube.com/watch?v=fd5OF4I45ak',
+      'vid,A Haitian Price Turns One,https://www.youtube.com/watch?v=fd5OF4I45ak',
       'vid,Vimeo Page One vid Projects,https://vimeo.com/masters3d/vids/page:1/sort:date',
       'vid,Vimeo Page Two vid Projects,https://vimeo.com/masters3d/vids/page:2/sort:date',
       'vid,WP Storage Structure,https://www.youtube.com/watch?v=wRj1z21ITDI',
@@ -61,7 +61,8 @@ class Data {
       let type = data[0];
       let name = data[1]
       let link = data[2]
-      let project = new Project(type, name, link, '', '', '')
+      let image = data[3] || ''
+      let project = new Project(type, name, link, image, '', '')
       _projects.push(project)
     }
     this._projects = _projects;
@@ -98,11 +99,12 @@ Project.prototype.toHtml = function() {
   $newProject.find('address').find('a').attr('href', this.link);
   $newProject.find('h1').first().text(this.name);
   $newProject.find('.article-body').first().html(this.description);
-  $newProject.find('.article-body').first().append(`<img src="${this.image + '?random=' + this.name}">`)
+  $newProject.find('.article-body').first().append(`<img src="${this.image}">`)
   // Display the date as a relative number of 'days ago'
   const today = new Date()
   const publishedOn = new Date(this.date)
-  $newProject.find('time').html('about ' + parseInt((today - publishedOn)/60/60/24/1000) + ' days ago');
+  const difference = today.getTime() - publishedOn.getTime()
+  $newProject.find('time').html('abou t ' + parseInt(`${difference/60/60/24/1000}`) + ' days ago');
   $newProject.append('<hr>');
   return $newProject;
 };
