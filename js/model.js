@@ -6,67 +6,68 @@ class Project {
    *  @param {string} link
    *  @param {string} image
    *  @param {string} description
+   *  @param {string} date
    */
-  constructor (type, name, link, image, description) {
+  constructor (type, name, link, image, description, date) {
     this.name = name
     this.type = type
     this.link = link
     this.description = description || generateRandomText()
     this.image = image || 'https://spaceholder.cc/800x600'
+    this.date = date || '2015-10-01'
   }
 }
 
-var Data = {
-  projectsInfo: [
-    'art,3D Sketches,http://community.thefoundry.co.uk/community/profile.aspx?name=cheyo84',
-    'vid,Honduras 2015 Highlights - Upon this Rock Ministries,https://www.youtube.com/watch?v=waXta2PAjfc',
-    'vid,Guatemala 2014 Upon This Rock Ministries,https://www.youtube.com/watch?v=VMkDSfq1ghg',
-    'vid,Team returns one year after Yolanda,https://www.youtube.com/watch?v=hMHgUtxMiG8',
-    'vid,Thank you vid,https://www.youtube.com/watch?v=64kGSkgOUjU',
-    'vid,Change Giving to Going | Hotes Foundation,https://www.youtube.com/watch?v=8qETFdq6UN8',
-    'vid,Earthquake,https://www.youtube.com/watch?v=16NcsqhRhzE',
-    'vid,THE HAITIAN PRINCE TURNS 1,https://www.youtube.com/watch?v=fd5OF4I45ak',
-    'vid,Vimeo Page One vid Projects,https://vimeo.com/masters3d/vids/page:1/sort:date',
-    'vid,Vimeo Page Two vid Projects,https://vimeo.com/masters3d/vids/page:2/sort:date',
-    'vid,WP Storage Structure,https://www.youtube.com/watch?v=wRj1z21ITDI',
-    'vid,WP School Canopies,https://www.youtube.com/watch?v=vOb_Xu74ras',
-    'vid,AKS Disaster Response Camp,https://www.youtube.com/watch?v=1q_1wL522yA',
-    'vid,AKS Quonset Buildings,https://www.youtube.com/watch?v=3Qz_OsdHruY',
-    'app,All Github Projects,https://github.com/masters3d?tab=repositories',
-    'app,BlogClient,https://github.com/masters3d/BlogClient/',
-    'app,VirtualTourist,https://github.com/masters3d/VirtualTourist',
-    'app,OntheMap,https://github.com/masters3d/OnTheMap',
-    'app,BreakoutGame,https://github.com/masters3d/breakoutGame',
-    'app,MemeCreator,https://github.com/masters3d/memeCreatorApp',
-    'app,VoiceRecorder,https://github.com/masters3d/recordVoiceApp',
-    'app,App Engine Source Code,https://github.com/masters3d/Appengine-Udacity-Blog-Project',
-    'app,Custom WIKI Web Server,http://cheyomasters3d.apppot.com/wiki',
-    'app,Blog Backend API with User Authentication,http://cheyomasters3d.apppot.com/blog.json',
-    'app,JavaGUIProject,https://github.com/masters3d/JavaGUIProject',
-    'app,TextBasedJavaGame,https://github.com/masters3d/TextBasedJavaGame',
-    'app,JavaGUITravelApp,https://github.com/masters3d/JavaGUITravelApp',
-    'web,Emoji Slots Game,https://github.com/AlexithymiaStudios/alexi-slots',
-    'web,BusMall Shopping App,https://github.com/masters3d/bus-mall',
-    'web,Pats Company Site,https://github.com/masters3d/pats_co',
-    'web,About Me Game,https://github.com/masters3d/about_me',
-    'web,Image to HTML Sample,https://github.com/masters3d/chocolate_pizza/',
-  ],
-  /** @property {Project[]} _projects */
-  _projects: [],
-  get projects() {
-    if(this._projects.length === 0) {
-      for(let each of this.projectsInfo) {
-        let data = each.split(',')
-        let type = data[0];
-        let name = data[1]
-        let link = data[2]
-        let project = new Project(type, name, link, '', '')
-        this._projects.push(project)
-      }
-      return this._projects
-    } else {
-      return this._projects
+class Data {
+  constructor() {
+    let projectsInfo = [
+      'art,3D Sketches,http://community.thefoundry.co.uk/community/profile.aspx?name=cheyo84',
+      'vid,Honduras 2015 Highlights - Upon this Rock Ministries,https://www.youtube.com/watch?v=waXta2PAjfc',
+      'vid,Guatemala 2014 Upon This Rock Ministries,https://www.youtube.com/watch?v=VMkDSfq1ghg',
+      'vid,Team returns one year after Yolanda,https://www.youtube.com/watch?v=hMHgUtxMiG8',
+      'vid,Thank you vid,https://www.youtube.com/watch?v=64kGSkgOUjU',
+      'vid,Change Giving to Going | Hotes Foundation,https://www.youtube.com/watch?v=8qETFdq6UN8',
+      'vid,Earthquake,https://www.youtube.com/watch?v=16NcsqhRhzE',
+      'vid,THE HAITIAN PRINCE TURNS 1,https://www.youtube.com/watch?v=fd5OF4I45ak',
+      'vid,Vimeo Page One vid Projects,https://vimeo.com/masters3d/vids/page:1/sort:date',
+      'vid,Vimeo Page Two vid Projects,https://vimeo.com/masters3d/vids/page:2/sort:date',
+      'vid,WP Storage Structure,https://www.youtube.com/watch?v=wRj1z21ITDI',
+      'vid,WP School Canopies,https://www.youtube.com/watch?v=vOb_Xu74ras',
+      'vid,AKS Disaster Response Camp,https://www.youtube.com/watch?v=1q_1wL522yA',
+      'vid,AKS Quonset Buildings,https://www.youtube.com/watch?v=3Qz_OsdHruY',
+      'app,All Github Projects,https://github.com/masters3d?tab=repositories',
+      'app,BlogClient,https://github.com/masters3d/BlogClient/',
+      'app,VirtualTourist,https://github.com/masters3d/VirtualTourist',
+      'app,OntheMap,https://github.com/masters3d/OnTheMap',
+      'app,BreakoutGame,https://github.com/masters3d/breakoutGame',
+      'app,MemeCreator,https://github.com/masters3d/memeCreatorApp',
+      'app,VoiceRecorder,https://github.com/masters3d/recordVoiceApp',
+      'app,App Engine Source Code,https://github.com/masters3d/Appengine-Udacity-Blog-Project',
+      'app,Custom WIKI Web Server,http://cheyomasters3d.apppot.com/wiki',
+      'app,Blog Backend API with User Authentication,http://cheyomasters3d.apppot.com/blog.json',
+      'app,JavaGUIProject,https://github.com/masters3d/JavaGUIProject',
+      'app,TextBasedJavaGame,https://github.com/masters3d/TextBasedJavaGame',
+      'app,JavaGUITravelApp,https://github.com/masters3d/JavaGUITravelApp',
+      'web,Emoji Slots Game,https://github.com/AlexithymiaStudios/alexi-slots',
+      'web,BusMall Shopping App,https://github.com/masters3d/bus-mall',
+      'web,Pats Company Site,https://github.com/masters3d/pats_co',
+      'web,About Me Game,https://github.com/masters3d/about_me',
+      'web,Image to HTML Sample,https://github.com/masters3d/chocolate_pizza/',
+    ]
+    /** @type {Project[]} _projects */
+    let _projects = []
+    for(let each of projectsInfo) {
+      let data = each.split(',')
+      let type = data[0];
+      let name = data[1]
+      let link = data[2]
+      let project = new Project(type, name, link, '', '', '')
+      _projects.push(project)
     }
+    this._projects = _projects;
+  }
+  get projects() {
+    return this._projects
   }
 }
 
