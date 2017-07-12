@@ -49,6 +49,7 @@ let projectsInfo = [
   'web,BusMall Shopping App,https://github.com/masters3d/bus-mall',
   'web,Pats Company Site,https://github.com/masters3d/pats_co',
   'web,About Me Game,https://github.com/masters3d/about_me',
+  'web,Image to HTML Sample,https://github.com/masters3d/chocolate_pizza/',
 ]
 
   //TODO: Add more web projects and artisting ones
