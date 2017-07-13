@@ -19,6 +19,10 @@ class Project {
   }
 }
 
+Project.prototype.getId = function() {
+  return this.name.replace(/ /g,'-').toLowerCase()
+}
+
 class Data {
   constructor() {
     let projectsInfo = [
@@ -112,8 +116,16 @@ Project.prototype.generateMediaHtmlString = function(type, mediaCode){
   }
 
   if (type === 'web') {
-    let link = `http://www.robothumb.com/src/?url=${mediaCode}&size=560x420`
-    return `<img src="${link}">`
+    //https://shkspr.mobi/blog/2015/11/google-secret-screenshot-api/
+    let link = `https://www.googleapis.com/pagespeedonline/v1/runPagespeed?screenshot=true&strategy=mobile&url=${mediaCode}`
+    let imgId = 'img-' + this.getId()
+    $.getJSON( link, function( dataIn ) {
+      let screenShotData = dataIn['screenshot']['data']
+      screenShotData = screenShotData.split('_').join('/').split('-').join('+')
+      let src = 'data:image/jpeg;base64,' + screenShotData
+      $('#' + imgId).attr('src',src);
+    });
+    return `<img id="${imgId}" src="">`
   }
 
   if (type === 'app'){
