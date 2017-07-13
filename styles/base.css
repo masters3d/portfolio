@@ -2,6 +2,22 @@ img {
   max-width: 100%;
 }
 
+nav {
+  background: #2e7bcf url(../images/header-bg-to-repeat.jpg) 0 0 repeat-x
+}
+
+.site-header h1 {
+  color: white;
+}
+
+.site-header h2 {
+  color: #9ddcff;
+}
+
+li {
+  background: white;
+}
+
 body {
   line-height: 1.5;
   font-size: 100%;

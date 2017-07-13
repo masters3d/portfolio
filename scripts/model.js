@@ -116,24 +116,11 @@ Project.prototype.generateMediaHtmlString = function(type, mediaCode){
   }
 
   if (type === 'web') {
-    //https://shkspr.mobi/blog/2015/11/google-secret-screenshot-api/
-    let link = `https://www.googleapis.com/pagespeedonline/v1/runPagespeed?screenshot=true&strategy=mobile&url=${mediaCode}`
-    let imgId = 'img-' + this.getId()
-    $.getJSON( link, function( dataIn ) {
-      let screenShotData = dataIn['screenshot']['data']
-      screenShotData = screenShotData.split('_').join('/').split('-').join('+')
-      let src = 'data:image/jpeg;base64,' + screenShotData
-      $('#' + imgId).attr('src',src);
-    });
-    return `<img id="${imgId}" src="">`
+    return `<img src="${'http://lorempixel.com/320/320/' + '?random=' + (Math.random())}">`
   }
 
   if (type === 'app'){
     `<img max-width="560" src="${mediaCode}">`
-  }
-
-  if (!mediaCode) {
-    return `<img src="${'http://lorempixel.com/320/320/' + '?random=' + new Date()}">`
   }
 
   return `<img src="${mediaCode}">`
