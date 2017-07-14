@@ -138,7 +138,7 @@ Project.prototype.generateDaysAgo = function() {
 }
 
 Project.prototype.toHtml = function() {
-  let handlebarsTemplateString = $('#handlebarsTemplate').html();
+  let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
   let html = compiled(this);
   return html;
