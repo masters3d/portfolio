@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="vendor/styles/icons.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+  <script type="text/x-handlebars-template" id="handlebarsTemplate">
+  	<article class="" data-category="{{type}}">
+        <header>
+          <a href="{{link}}"><h1>{{name}}</h1></a>
+          <div class="byline">
+            By <address>Masters3d</address>
+            published <time pubdate datetime="{{date}}">{{daysAgo}}</time> on {{type}}.
+          </div>
+        </header>
+        <section class="article-body">{{{description}}}</section>
+        <section>{{{media}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+     </article>
+  </script>
+</head>
+<body>
+  <header class="site-header clearfix">
+    <section class="heading-group-h1">
+      <h1>
+        Masters3d
+      </h1>
+      <h2>Technical. Creative. Tactical. Director. Designer, Developer, Product Owner.</h2>
+    </section>
+    <nav class="main-nav">
+      <div class="icon-menu"></div>
+      <ul>
+        <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+        <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+        <li class="tab" data-content="vid"><a href="#" class="icon-film"> Videos</a></li>
+        <li class="tab" data-content="web"><a href="#" class="icon-image"> Web Apps</a></li>
+        <li class="tab" data-content="app"><a href="#" class="icon-film"> Mobile Apps</a></li>
+        <li class="tab" data-content="art"><a href="#" class="icon-film"> Design</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="articles" class="tab-content">
+    </section>
+    <section id="about" class="tab-content">
+      <header>
+        Welcome to my Portfolio
+      </header>
+      <a href="http://twitter.com/masters3d" target="_blank" class="icon-twitter"> Twitter</a>
+      <a href="http://github.com/masters3d" target="_blank" class="icon-github"> GitHub</a>
+    </section>
+  </main>
+  <footer>
+    &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
+
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="scripts/model.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
