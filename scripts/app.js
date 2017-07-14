@@ -1,4 +1,6 @@
-'use strict'
+/// <reference types="jquery" />
+
+'use strict';
 
 let projects = (new Data()).projects;
 

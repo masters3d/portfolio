@@ -1,4 +1,5 @@
-'use strict'
+/// <reference types="jquery" />
+'use strict';
 
 class Project {
   /** @param {string} name
