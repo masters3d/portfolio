@@ -1,4 +1,5 @@
 /// <reference types="jquery" />
+/// <reference types="handlebars" />
 'use strict';
 
 class Project {
@@ -8,6 +9,7 @@ class Project {
    *  @param {string} media | HTML object as a string
    *  @param {string} description
    *  @param {string} date
+   *  @param {string} daysAgo
    */
   constructor (type, name, link, media, description, date) {
     this.type = type
@@ -17,6 +19,7 @@ class Project {
       this.generateMediaHtmlString(type, link)
     this.description = description || this.generateRandomText()
     this.date = date || '2015-10-01'
+    this.daysAgo = this.generateDaysAgo();
   }
 }
 
@@ -24,11 +27,10 @@ Project.prototype.getId = function() {
   return this.name.replace(/ /g,'-').toLowerCase()
 }
 
-class Data {
+class Data { // eslint-disable-line
   constructor() {
     let projectsInfo = [
-      `art,3D Sketches,
-        http://community.foundry.com/profile/cheyo84,
+      `art,3D Sketches,http://community.foundry.com/profile/cheyo84,
         http://content.luxology.com/gallery/7faba61b214ef99f765daea6a422308e.jpg`,
       `art,All Vimeo Videos,https://vimeo.com/masters3d`,
       `vid,Honduras 2015 Highlights - Upon this Rock Ministries,youtube=waXta2PAjfc`,
@@ -127,33 +129,17 @@ Project.prototype.generateMediaHtmlString = function(type, mediaCode){
   return `<img src="${mediaCode}">`
 
 }
-
-Project.prototype.toHtml = function() {
-  let template =
-  `<article>
-        <header>
-          <h1>Title</h1>
-          <div class="byline">
-            By <address><a href="">Author Name</a></address>
-            published <time pubdate datetime="2000-01-01">Publish Time</time>
-          </div>
-        </header>
-        <section class="article-body"></section>
-        <a href="#" class="read-on">Read on &rarr;</a>
-      </article>
-  `
-  let $newProject = $('<div/>').html(template).contents().clone();
-  $newProject.data('category', this.type);
-  $newProject.find('address a').first().text(this.name);
-  $newProject.find('address').find('a').attr('href', this.link);
-  $newProject.find('h1').first().text(this.name);
-  $newProject.find('.article-body').first().html(this.description);
-  $newProject.find('.article-body').first().append(this.media)
-  // Display the date as a relative number of 'days ago'
+// Display the date as a relative number of 'days ago'
+Project.prototype.generateDaysAgo = function() {
   const today = new Date()
   const publishedOn = new Date(this.date)
   const difference = today.getTime() - publishedOn.getTime()
-  $newProject.find('time').html('abou t ' + parseInt(`${difference/60/60/24/1000}`) + ' days ago');
-  $newProject.append('<hr>');
-  return $newProject;
+  return 'about ' + parseInt(`${difference/60/60/24/1000}`) + ' days ago';
+}
+
+Project.prototype.toHtml = function() {
+  let handlebarsTemplateString = $('#handlebarsTemplate').html();
+  let compiled = Handlebars.compile(handlebarsTemplateString);
+  let html = compiled(this);
+  return html;
 };

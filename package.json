@@ -4,6 +4,7 @@
   "description": "My Portfolio",
   "main": "scripts/app.js",
   "dependencies": {
+    "@types/handlebars": "^4.0.34",
     "@types/jquery": "^3.2.8",
     "@types/node": "^8.0.13"
   },

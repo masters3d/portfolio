@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
   <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+  <script type="text/x-handlebars-template" id="handlebarsTemplate">
+  	<article class="" data-category="{{type}}">
+        <header>
+          <h1>{{name}}</h1>
+          <div class="byline">
+            By <address><a href="{{link}}">{{name}}</a></address>
+            published <time pubdate datetime="{{date}}">{{daysAgo}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{{description}}}</section>
+        <section>{{{media}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+     </article>
+  </script>
 </head>
 <body>
   <header class="site-header clearfix">
@@ -41,9 +55,9 @@
   <footer>
     &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="scripts/model.js"></script>
   <script src="scripts/app.js"></script>
-  <!-- TODO: Link our new script file in. -->
 </body>
 </html>
