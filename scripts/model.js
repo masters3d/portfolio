@@ -2,6 +2,22 @@
 /// <reference types="handlebars" />
 'use strict';
 
+
+class Media {
+  /** @param {string} source is the link for the source
+   * @param {string} typeofmedia is the type of HTML container to make
+   * @param {string} provider is the video provider for the source
+   * @param {string} id is the id of the video or type of provider
+   */
+  constructor (source, typeofmedia, id, provider) {
+    this.source = source
+    this.typeofmedia = typeofmedia
+    this.id = id
+    this.provider = provider
+  }
+
+}
+
 class Project {
   /** @param {string} name
    *  @param {string} type web | vid | app | art
