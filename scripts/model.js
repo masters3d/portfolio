@@ -39,7 +39,7 @@ class Data { // eslint-disable-line
       `vid,Thank you vid,youtube=64kGSkgOUjU`,
       `vid,Change Giving to Going | Hotes Foundation,youtube=8qETFdq6UN8`,
       `vid,Earthquake,youtube=16NcsqhRhzE`,
-      `vid,A Haitian Price Turns One,youtube=fd5OF4I45ak`,
+      `vid,A Haitian Prince Turns One,youtube=fd5OF4I45ak`,
       `vid,Cool 3d After FX,vimeo=1962476`,
       `vid,TVida Vision,vimeo=1960049`,
       `vid,Slavador trip,vimeo=1924143`,
