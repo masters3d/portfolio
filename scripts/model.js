@@ -2,21 +2,35 @@
 /// <reference types="handlebars" />
 'use strict';
 
-
 class Media {
   /** @param {string} source is the link for the source
-   * @param {string} typeofmedia is the type of HTML container to make
+   * @param {string} elementType |video|image|iframe|
    * @param {string} provider is the video provider for the source
    * @param {string} id is the id of the video or type of provider
    */
-  constructor (source, typeofmedia, id, provider) {
-    this.source = source
-    this.typeofmedia = typeofmedia
-    this.id = id
-    this.provider = provider
+  constructor (source, elementType, id, provider) {
+    this.source = source || ''
+    this.elementType = elementType || ''
+    this.id = id || ''
+    this.provider = provider || ''
   }
-
 }
+
+/** @param {Media} media 
+*/
+Handlebars.registerHelper('mediaCreateHtml', function(media) {
+  if (!media.source || media.elementType === 'video'){
+    switch(media.provider){
+    case 'vimeo':
+      return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+    case 'youtube':
+      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+    }
+  } else if (media.source && media.elementType === 'image') {
+    return `<img max-width="560" src="${media.source}">`
+  }
+  return '';
+});
 
 class Project {
   /** @param {string} name
@@ -31,11 +45,9 @@ class Project {
     this.type = type
     this.name = name
     this.link = link.trim()
-    this.media = media ? this.generateMediaHtmlString(type, media.trim()) :
-      this.generateMediaHtmlString(type, link)
-    this.description = description || this.generateRandomText()
-    this.date = date || '2015-10-01'
-    this.daysAgo = this.generateDaysAgo();
+    this.media = media;
+    this.description = description
+    this.date = date
   }
 }
 
@@ -51,10 +63,28 @@ class Data { // eslint-disable-line
     let _projects = []
 
     for(let each of jsonData) {
-      let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
+      // console.log(each.media)
+      let temp = $('<div/>').html(each.media).children().first();
+      // console.log(temp)
+      let source = temp.attr('src')
+      // console.log(source)
+      let elementType = each.type === 'vid' ? 'video' : 'image'
+      let provider = elementType === 'video' ? source.search('youtube') === -1 ? 'vimeo' : 'youtube' : ''
+      let id = function() {
+        if (elementType !== 'video') { return '' }
+        if( provider === 'youtube') {
+          return source.split('embed/')[1].split('?ecver')[0]
+        } else {
+          let mystring = source.split('video/')[1]
+          return  mystring //= mystring.substring(0, mystring.length - 1);
+        }
+      }()
+      let media = new Media(source,elementType,id,provider)
+      let project = new Project(each.type, each.name, each.link, media, each.description, each.date)
       _projects.push(project)
     }
     this._projects = _projects;
+    console.log(JSON.stringify(_projects))
   }
 
   get projects() {
@@ -62,42 +92,12 @@ class Data { // eslint-disable-line
   }
 }
 
-Project.prototype.generateRandomText = function() {
-  let text =`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;
-            `
-  return text;
-}
-/** @param {string} mediaCode
- *  @param {string} type
-*/
-Project.prototype.generateMediaHtmlString = function(type, mediaCode){
-  if (type === 'vid') {
-    let provider, code
-    [provider, code] = (mediaCode.split('='))
-    if ( provider === 'vimeo') {
-      return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${code}" frameborder="0" allowfullscreen></iframe>`
-    } else if (provider === 'youtube') {
-      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${code}?ecver=1" frameborder="0" allowfullscreen></iframe>`
-    }
-  }
-
-  if (type === 'web') {
-    return `<img src="${'http://lorempixel.com/320/320/' + '?random=' + (Math.random())}">`
-  }
-
-  if (type === 'app'){
-    `<img max-width="560" src="${mediaCode}">`
-  }
-
-  return `<img src="${mediaCode}">`
-
-}
 // Display the date as a relative number of 'days ago'
 Project.prototype.generateDaysAgo = function() {
   const today = new Date()
   const publishedOn = new Date(this.date)
   const difference = today.getTime() - publishedOn.getTime()
-  return 'about ' + parseInt(`${difference/60/60/24/1000}`) + ' days ago';
+  return parseInt(`${difference/60/60/24/1000}`)
 }
 
 Project.prototype.toHtml = function() {

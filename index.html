@@ -11,9 +11,9 @@
   <script type="text/x-handlebars-template" id="handlebarsTemplate">
   	<article data-category="{{type}}">
         <a href="{{link}}"><h1>{{name}}</h1></a>
+        <section>{{{mediaCreateHtml media}}}</section>
+        <section><span>{{{type}}}</span> | <time>{{{date}}}</time></section>
         <section>{{{description}}}</section>
-        <section>{{{media}}}</section>
-        <section><span>{{{type}}}</span> | <time>{{{date}}}"></time></section>
      </article>
   </script>
 </head>
