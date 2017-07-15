@@ -3,297 +3,429 @@
     "type": "art",
     "name": "3D Sketches",
     "link": "http://community.foundry.com/profile/cheyo84",
-    "media": "<img src=\"http://content.luxology.com/gallery/7faba61b214ef99f765daea6a422308e.jpg\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://content.luxology.com/gallery/7faba61b214ef99f765daea6a422308e.jpg",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "art",
     "name": "All Vimeo Videos",
     "link": "https://vimeo.com/masters3d",
-    "media": "<img src=\"https://vimeo.com/masters3d\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28237689-3df3dafc-68fa-11e7-854e-d0128aaf95cd.png",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Honduras 2015 Highlights - Upon this Rock Ministries",
-    "link": "youtube=waXta2PAjfc",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/waXta2PAjfc?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=waXta2PAjfc",
+    "media": {
+      "source": "https://www.youtube.com/embed/waXta2PAjfc?ecver=1",
+      "elementType": "video",
+      "id": "waXta2PAjfc",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Guatemala 2014 Upon This Rock Ministries",
-    "link": "youtube=VMkDSfq1ghg",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VMkDSfq1ghg?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=VMkDSfq1ghg",
+    "media": {
+      "source": "https://www.youtube.com/embed/VMkDSfq1ghg?ecver=1",
+      "elementType": "video",
+      "id": "VMkDSfq1ghg",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Team returns one year after Yolanda",
-    "link": "youtube=hMHgUtxMiG8",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hMHgUtxMiG8?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=hMHgUtxMiG8",
+    "media": {
+      "source": "https://www.youtube.com/embed/hMHgUtxMiG8?ecver=1",
+      "elementType": "video",
+      "id": "hMHgUtxMiG8",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Thank you vid",
-    "link": "youtube=64kGSkgOUjU",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/64kGSkgOUjU?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=64kGSkgOUjU",
+    "media": {
+      "source": "https://www.youtube.com/embed/64kGSkgOUjU?ecver=1",
+      "elementType": "video",
+      "id": "64kGSkgOUjU",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Change Giving to Going | Hotes Foundation",
-    "link": "youtube=8qETFdq6UN8",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/8qETFdq6UN8?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=8qETFdq6UN8",
+    "media": {
+      "source": "https://www.youtube.com/embed/8qETFdq6UN8?ecver=1",
+      "elementType": "video",
+      "id": "8qETFdq6UN8",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Earthquake",
-    "link": "youtube=16NcsqhRhzE",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/16NcsqhRhzE?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=16NcsqhRhzE",
+    "media": {
+      "source": "https://www.youtube.com/embed/16NcsqhRhzE?ecver=1",
+      "elementType": "video",
+      "id": "16NcsqhRhzE",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "A Haitian Prince Turns One",
-    "link": "youtube=fd5OF4I45ak",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/fd5OF4I45ak?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=fd5OF4I45ak",
+    "media": {
+      "source": "https://www.youtube.com/embed/fd5OF4I45ak?ecver=1",
+      "elementType": "video",
+      "id": "fd5OF4I45ak",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Cool 3d After FX",
-    "link": "vimeo=1962476",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://player.vimeo.com/video/1962476\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://vimeo.com/1962476",
+    "media": {
+      "source": "https://player.vimeo.com/video/1962476",
+      "elementType": "video",
+      "id": "1962476",
+      "provider": "vimeo"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "TVida Vision",
-    "link": "vimeo=1960049",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://player.vimeo.com/video/1960049\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://vimeo.com/1960049",
+    "media": {
+      "source": "https://player.vimeo.com/video/1960049",
+      "elementType": "video",
+      "id": "1960049",
+      "provider": "vimeo"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "Slavador trip",
-    "link": "vimeo=1924143",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://player.vimeo.com/video/1924143\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://vimeo.com/1924143",
+    "media": {
+      "source": "https://player.vimeo.com/video/1924143",
+      "elementType": "video",
+      "id": "1924143",
+      "provider": "vimeo"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "WP Storage Structure",
-    "link": "youtube=wRj1z21ITDI",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/wRj1z21ITDI?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=wRj1z21ITDI",
+    "media": {
+      "source": "https://www.youtube.com/embed/wRj1z21ITDI?ecver=1",
+      "elementType": "video",
+      "id": "wRj1z21ITDI",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "WP School Canopies",
-    "link": "youtube=vOb_Xu74ras",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/vOb_Xu74ras?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=vOb_Xu74ras",
+    "media": {
+      "source": "https://www.youtube.com/embed/vOb_Xu74ras?ecver=1",
+      "elementType": "video",
+      "id": "vOb_Xu74ras",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "AKS Disaster Response Camp",
-    "link": "youtube=1q_1wL522yA",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/1q_1wL522yA?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=1q_1wL522yA",
+    "media": {
+      "source": "https://www.youtube.com/embed/1q_1wL522yA?ecver=1",
+      "elementType": "video",
+      "id": "1q_1wL522yA",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "vid",
     "name": "AKS Quonset Buildings",
-    "link": "youtube=3Qz_OsdHruY",
-    "media": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3Qz_OsdHruY?ecver=1\" frameborder=\"0\" allowfullscreen></iframe>",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "link": "https://www.youtube.com/watch?v=3Qz_OsdHruY",
+    "media": {
+      "source": "https://www.youtube.com/embed/3Qz_OsdHruY?ecver=1",
+      "elementType": "video",
+      "id": "3Qz_OsdHruY",
+      "provider": "youtube"
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "All Github Projects",
     "link": "https://github.com/masters3d?tab=repositories",
-    "media": "<img src=\"https://github.com/masters3d?tab=repositories\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28237663-b7b7208e-68f9-11e7-9586-63e31c62a31a.png",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "BlogClient",
     "link": "https://github.com/masters3d/BlogClient/",
-    "media": "<img src=\"https://user-images.githubusercontent.com/6539412/28151810-dea0b682-6751-11e7-8700-a17b41a4492b.gif\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28151810-dea0b682-6751-11e7-8700-a17b41a4492b.gif",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "VirtualTourist",
     "link": "https://github.com/masters3d/VirtualTourist",
-    "media": "<img src=\"https://cloud.githubusercontent.com/assets/6539412/19018530/da18a9f2-8819-11e6-8766-42ccdc0ea546.gif\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://cloud.githubusercontent.com/assets/6539412/19018530/da18a9f2-8819-11e6-8766-42ccdc0ea546.gif",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "OntheMap",
     "link": "https://github.com/masters3d/OnTheMap",
-    "media": "<img src=\"https://cloud.githubusercontent.com/assets/6539412/19424719/5ce11b22-93e0-11e6-85bd-3e2ca49a45b9.png\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://cloud.githubusercontent.com/assets/6539412/19424719/5ce11b22-93e0-11e6-85bd-3e2ca49a45b9.png",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "BreakoutGame",
     "link": "https://github.com/masters3d/breakoutGame",
-    "media": "<img src=\"https://camo.githubusercontent.com/555990b2d77f31959922c4ea545d6d2201aa238a/687474703a2f2f692e696d6775722e636f6d2f395233494a33312e676966\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://camo.githubusercontent.com/555990b2d77f31959922c4ea545d6d2201aa238a/687474703a2f2f692e696d6775722e636f6d2f395233494a33312e676966",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "MemeCreator",
     "link": "https://github.com/masters3d/memeCreatorApp",
-    "media": "<img src=\"https://cloud.githubusercontent.com/assets/6539412/19424696/262c5a4c-93e0-11e6-95a2-7a380e6644c7.png\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://cloud.githubusercontent.com/assets/6539412/19424696/262c5a4c-93e0-11e6-95a2-7a380e6644c7.png",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "VoiceRecorder",
     "link": "https://github.com/masters3d/recordVoiceApp",
-    "media": "<img src=\"https://user-images.githubusercontent.com/6539412/28151962-c8f77dba-6752-11e7-8ba8-a8f031caa3fb.gif\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28151962-c8f77dba-6752-11e7-8ba8-a8f031caa3fb.gif",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "JavaGUIProject",
     "link": "https://github.com/masters3d/JavaGUIProject",
-    "media": "<img src=\"https://user-images.githubusercontent.com/6539412/28152784-11b0ec7c-6757-11e7-8dd2-b634b3e3bb74.gif\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28152784-11b0ec7c-6757-11e7-8dd2-b634b3e3bb74.gif",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "TextBasedJavaGame",
     "link": "https://github.com/masters3d/TextBasedJavaGame",
-    "media": "<img src=\"https://user-images.githubusercontent.com/6539412/28152533-e62a4e32-6755-11e7-81b6-ef309edf99e5.gif\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://user-images.githubusercontent.com/6539412/28152533-e62a4e32-6755-11e7-81b6-ef309edf99e5.gif",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "app",
     "name": "JavaGUITravelApp",
     "link": "https://github.com/masters3d/JavaGUITravelApp",
-    "media": "<img src=\"https://cloud.githubusercontent.com/assets/6539412/14809215/613f446a-0b40-11e6-9cb1-4d1deb177f26.png\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "https://cloud.githubusercontent.com/assets/6539412/14809215/613f446a-0b40-11e6-9cb1-4d1deb177f26.png",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "App Engine Wiki Web Server",
     "link": "https://github.com/masters3d/Appengine-Udacity-Blog-Project",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.9938069296855203\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.9938069296855203",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "Blog Backend API with User Authentication",
     "link": "http://cheyomasters3d.apppot.com/blog.json",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.5365573568431075\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.5365573568431075",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "Emoji Slots Game",
     "link": "https://github.com/AlexithymiaStudios/alexi-slots",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.5817689858281545\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.5817689858281545",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "BusMall Shopping App",
     "link": "https://github.com/masters3d/bus-mall",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.10449791757913274\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.10449791757913274",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "Pats Company Site",
     "link": "https://github.com/masters3d/pats_co",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.7198128684322995\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.7198128684322995",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "About Me Game",
     "link": "https://github.com/masters3d/about_me",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.3084017277902895\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.3084017277902895",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   },
   {
     "type": "web",
     "name": "Image to HTML Sample",
     "link": "https://github.com/masters3d/chocolate_pizza/",
-    "media": "<img src=\"http://lorempixel.com/320/320/?random=0.5650039531591988\">",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Ut optime, secundum naturam affectum esse possit. Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae. Duo Reges: constructio interrete. Ut id aliis narrare gestiant? Certe, nisi voluptatem tanti aestimaretis. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Nam de isto magna dissensio est. Age nunc isti doceant, vel tu potius quis enim ista melius? Non enim iam stirpis bonum quaeret, sed animalis. Tollenda est atque extrahenda radicitus. Partim cursu et peragratione laetantur, congregatione aliae coetum quodam modo civitatis imitantur;\n            ",
-    "date": "2015-10-01",
-    "daysAgo": "about 652 days ago"
+    "media": {
+      "source": "http://lorempixel.com/320/320/?random=0.5650039531591988",
+      "elementType": "image",
+      "id": "",
+      "provider": ""
+    },
+    "description": "Add a short description here",
+    "date": "2015-10-01"
   }
 ]

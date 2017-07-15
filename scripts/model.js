@@ -2,7 +2,7 @@
 /// <reference types="handlebars" />
 'use strict';
 
-class Media {
+class Media { // eslint-disable-line
   /** @param {string} source is the link for the source
    * @param {string} elementType |video|image|iframe|
    * @param {string} provider is the video provider for the source
@@ -16,27 +16,28 @@ class Media {
   }
 }
 
+Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media 
 */
-Handlebars.registerHelper('mediaCreateHtml', function(media) {
-  if (!media.source || media.elementType === 'video'){
-    switch(media.provider){
-    case 'vimeo':
-      return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
-    case 'youtube':
-      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+  function(media) {
+    if (!media.source || media.elementType === 'video'){
+      switch(media.provider){
+      case 'vimeo':
+        return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+      case 'youtube':
+        return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+      }
+    } else if (media.source && media.elementType === 'image') {
+      return `<img max-width="560" src="${media.source}">`
     }
-  } else if (media.source && media.elementType === 'image') {
-    return `<img max-width="560" src="${media.source}">`
-  }
-  return '';
-});
+    return '';
+  });
 
 class Project {
   /** @param {string} name
    *  @param {string} type web | vid | app | art
    *  @param {string} link
-   *  @param {string} media | HTML object as a string
+   *  @param {Media} media | HTML object as a string
    *  @param {string} description
    *  @param {string} date
    *  @param {string} daysAgo
@@ -63,28 +64,10 @@ class Data { // eslint-disable-line
     let _projects = []
 
     for(let each of jsonData) {
-      // console.log(each.media)
-      let temp = $('<div/>').html(each.media).children().first();
-      // console.log(temp)
-      let source = temp.attr('src')
-      // console.log(source)
-      let elementType = each.type === 'vid' ? 'video' : 'image'
-      let provider = elementType === 'video' ? source.search('youtube') === -1 ? 'vimeo' : 'youtube' : ''
-      let id = function() {
-        if (elementType !== 'video') { return '' }
-        if( provider === 'youtube') {
-          return source.split('embed/')[1].split('?ecver')[0]
-        } else {
-          let mystring = source.split('video/')[1]
-          return  mystring //= mystring.substring(0, mystring.length - 1);
-        }
-      }()
-      let media = new Media(source,elementType,id,provider)
-      let project = new Project(each.type, each.name, each.link, media, each.description, each.date)
+      let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
       _projects.push(project)
     }
     this._projects = _projects;
-    console.log(JSON.stringify(_projects))
   }
 
   get projects() {
