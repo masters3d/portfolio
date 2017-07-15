@@ -28,7 +28,7 @@ Handlebars.registerHelper('mediaCreateHtml',
         return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
       }
     } else if (media.source && media.elementType === 'image') {
-      return `<img max-width="560" src="${media.source}">`
+      return `<img width="560" src="${media.source}">`
     }
     return '';
   });
@@ -45,7 +45,7 @@ class Project {
   constructor (type, name, link, media, description, date) {
     this.type = type
     this.name = name
-    this.link = link.trim()
+    this.link = link
     this.media = media;
     this.description = description
     this.date = date
@@ -73,14 +73,6 @@ class Data { // eslint-disable-line
   get projects() {
     return this._projects
   }
-}
-
-// Display the date as a relative number of 'days ago'
-Project.prototype.generateDaysAgo = function() {
-  const today = new Date()
-  const publishedOn = new Date(this.date)
-  const difference = today.getTime() - publishedOn.getTime()
-  return parseInt(`${difference/60/60/24/1000}`)
 }
 
 Project.prototype.toHtml = function() {

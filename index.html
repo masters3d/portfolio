@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
   <script type="text/x-handlebars-template" id="handlebarsTemplate">
-  	<article data-category="{{type}}">
-        <a href="{{link}}"><h1>{{name}}</h1></a>
+  	<article class="project-card" data-type="{{type}}">
+        <a href="{{link}}"><h2>{{name}}</h2></a>
         <section>{{{mediaCreateHtml media}}}</section>
-        <section><span>{{{type}}}</span> | <time>{{{date}}}</time></section>
+        <section><span>{{{type}}}</span> | <span data-date="{{date}}">{{{date}}}</span></section>
         <section>{{{description}}}</section>
      </article>
   </script>
@@ -32,5 +32,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="scripts/model.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/controller.js"></script>
 </body>
 </html>
