@@ -33,15 +33,27 @@ Controller.createMenuHtml = function() {
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
   for (let each of Data.menuItems){
-    let [title, type] = each.split('|')
+    let [title, type, iconclass] = each.split('|')
     type = type.toLowerCase()
-    menuObjects.menuItems.push({title, type})
+    menuObjects.menuItems.push({title, type, iconclass})
   }
   let handlebarsTemplateString = jQuery('#handlebarsMenuTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
   let html = compiled(menuObjects);
   return html;
 }
+
+Handlebars.registerHelper('applyIconType',
+/** @param {string} type */
+  function(type){
+    for(let each of Data.menuItems) {
+      let [  ,category, iconClass] = each.split('|')
+      if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
+        return iconClass;
+      }
+    }
+    return ''
+  })
 
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media 

@@ -41,9 +41,18 @@ a {
   border-top-right-radius:5px;
   background: white;
 }
+
 .tab:hover {
   transform: translateY(-.5em);
   transform: scale(1.15);  
+}
+
+a[class^='icon-'] {
+  font-size: 140%;
+}
+
+a[class^='icon-']:hover {
+  font-size: 180%;
 }
 
 .project-card span {
