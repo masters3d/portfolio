@@ -50,7 +50,15 @@ class Data { // eslint-disable-line
       let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
       _projects.push(project)
     }
-    this._projects = _projects;
+    this._projects = _projects.sort(function(a, b){
+      let dateA = new Date(a.date).getTime()
+      let dateB = new Date(b.date).getTime()
+      if (dateA < dateB) {
+        return true
+      } else {
+        return false
+      }
+    });
   }
 
   get projects() {
