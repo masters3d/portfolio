@@ -47,14 +47,6 @@ a {
   transform: scale(1.15);  
 }
 
-a[class^='icon-'] {
-  font-size: 140%;
-}
-
-a[class^='icon-']:hover {
-  font-size: 180%;
-}
-
 .project-card span {
   text-transform: uppercase;
 }
@@ -82,7 +74,13 @@ a[class^='icon-']:hover {
   content: "⏫"
 } 
 
- .show:hover:after, .hide:hover:after {
+
+
+a[class^='icon-'] {
+  font-size: 140%;
+}
+
+ .show:hover:after, .hide:hover:after, a[class^='icon-']:hover  {
   display: inline-block;
   position: relative;
   animation-duration: 1s;
