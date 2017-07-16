@@ -46,7 +46,7 @@ and (max-width : 667px) {
   .icon-menu {
     display: flex;
     justify-content:left;
-    margin-bottom: -10px;
+    margin-bottom: -2px;
   }
 
   .tab {
@@ -60,6 +60,10 @@ and (max-width : 667px) {
 
   .icon-menu:hover + nav, .icon-menu:active + nav,  nav:hover {
     display: inline;
+  }
+
+  .tab:hover {
+    transform: none;
   }
  
 }

@@ -53,11 +53,7 @@ class Data { // eslint-disable-line
     this._projects = _projects.sort(function(a, b){
       let dateA = new Date(a.date).getTime()
       let dateB = new Date(b.date).getTime()
-      if (dateA < dateB) {
-        return true
-      } else {
-        return false
-      }
+      return (dateA < dateB) ? 1 : -1
     });
   }
 
