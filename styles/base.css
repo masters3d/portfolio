@@ -1,14 +1,16 @@
-img iframe  {
+img, iframe  {
   max-width: 100%;
 }
 
 header {
   /* This background came from the Architect theme by Jason Long from GitHub Pages. */
-  background: #2e7bcf url(../images/header-bg-to-repeat.jpg) 0 0 repeat-x
+  background: #2e7bcf url(../images/header-bg-to-repeat.jpg) 0 0 repeat-x;
 }
 
 header h1 {
   color: white;
+  margin-top: 0;
+  padding-top: 0;
 }
 
  header h2 {
@@ -31,7 +33,8 @@ a {
 .tab:hover {
   transform: translateY(-.5em);
   transform: scale(1.15);
-  border-radius: 5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
   background: white;
 }
 

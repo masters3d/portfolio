@@ -1,0 +1,9 @@
+
+
+/* http://howtocenterincss.com/#contentType=div&horizontal=center&vertical=bottom */
+nav, h1 {
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
