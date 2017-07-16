@@ -98,8 +98,3 @@ Controller.handlerShowAndHide = function() {
   });
 
 }
-
-//TODO: Parse blogger and medium post onto the writer tab
-//http://blog.masters3d.com//feeds/posts/default
-//https://www.raymondcamden.com/2015/12/08/parsing-rss-feeds-in-javascript-options
-//https://medium.com/feed/@masters3d
