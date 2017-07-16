@@ -3,6 +3,7 @@
 'use strict';
 
 var Controller = {}
+
 // Display the date as a relative number of 'days ago' on hover
 Controller.timeHoverRegister = function() { // eslint-disable-line
   $('span[data-date]').hover(function(){
@@ -47,7 +48,7 @@ Handlebars.registerHelper('applyIconType',
 /** @param {string} type */
   function(type){
     for(let each of Data.menuItems) {
-      let [  ,category, iconClass] = each.split('|')
+      let [ , category, iconClass] = each.split('|')
       if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
         return iconClass;
       }
@@ -83,6 +84,22 @@ Controller.handlerForNav = function() {
 
   $('.tab[data-type="iam"]').click();
 };
+
+Controller.handlerShowAndHide = function() {
+  let showText = 'Show Media ⏫'
+  let hideText = 'Hide Media ⏬'
+  $('.showhide').on('click', function(event){
+    event.preventDefault()
+    if (this.textContent === showText) {
+      $(this).parent().siblings('.media').fadeIn()
+      this.textContent = hideText
+    } else if (this.textContent === hideText) {
+      $(this).parent().siblings('.media').fadeOut()
+      this.textContent = showText
+    }
+  });
+
+}
 
 //TODO: Parse blogger and medium post onto the writer tab
 //http://blog.masters3d.com//feeds/posts/default

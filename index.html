@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="styles/modules.css">
   <script type="text/x-handlebars-template" id="handlebarsTemplate">
   	<article class="project-card" data-type="{{type}}">
-        <a href="{{link}}"><h2>{{name}}</h2></a>
+        <a href="{{link}}"><h3>{{name}}</h3></a>
         <section class="media">{{{mediaCreateHtml media}}}</section>
+         <section>{{{description}}} <a class='showhide'href="">Show Media ⏫</a></section>
         <section><span class="{{applyIconType type}}">{{{type}}}</span> | <span data-date="{{date}}">{{{date}}}</span></section>
-        <section>{{{description}}}</section>
      </article>
   </script>
 </head>

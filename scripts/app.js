@@ -18,6 +18,10 @@ $(function() {
 
     // Handlers
     Controller.handlerForNav()
+    Controller.handlerShowAndHide()
+
+    // hiding all the media sections
+    $('.media').hide()
   });
 })
 
