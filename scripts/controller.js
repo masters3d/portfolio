@@ -76,7 +76,7 @@ Handlebars.registerHelper('mediaCreateHtml',
 Controller.handlerForNav = function() {
   $('nav').on('click', '.tab', function() {
     $('.tab').removeClass('tabActivated')
-    $('article').fadeOut();
+    $('article').hide();
     let attibute = this.getAttribute('data-type');
     $(`*[data-type="${attibute}"]`).fadeIn();
     $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
@@ -86,16 +86,14 @@ Controller.handlerForNav = function() {
 };
 
 Controller.handlerShowAndHide = function() {
-  let showText = 'Show Media ⏫'
-  let hideText = 'Hide Media ⏬'
-  $('.showhide').on('click', function(event){
+  $('.show, .hide').on('click', function(event){
     event.preventDefault()
-    if (this.textContent === showText) {
+    if (this.className === 'show') {
       $(this).parent().siblings('.media').fadeIn()
-      this.textContent = hideText
-    } else if (this.textContent === hideText) {
+      this.className = 'hide'
+    } else if (this.className === 'hide') {
       $(this).parent().siblings('.media').fadeOut()
-      this.textContent = showText
+      this.className = 'show'
     }
   });
 

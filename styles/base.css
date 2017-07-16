@@ -62,3 +62,39 @@ a[class^='icon-']:hover {
 .project-card {
   border-style: inset;
 }
+
+.project-card h3 {
+  margin-bottom: 0;
+  padding-bottom: 0; 
+}
+
+.show:before {
+  content: "Show Media ";
+}
+.hide:before {
+  content: "Hide Media ";
+}
+
+ .show:after {
+  content: "⏬"
+}
+.hide:after {
+  content: "⏫"
+} 
+
+ .show:hover:after, .hide:hover:after {
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% {
+    top: -1px
+  }
+  100% {
+    top: 2px;
+  }
+}  
