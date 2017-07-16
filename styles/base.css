@@ -67,14 +67,12 @@ a {
   content: "Hide Media ";
 }
 
- .show:after {
+.show:after {
   content: "⏬"
 }
 .hide:after {
   content: "⏫"
 } 
-
-
 
 a[class^='icon-'] {
   font-size: 140%;

@@ -1,0 +1,35 @@
+
+/* modified from http://stephen.io/mediaqueries/ */
+
+/* Desktop */
+@media only screen 
+and (min-width : 1024px){
+  nav {
+    display: flex;
+  }
+  .tab {
+    width: 10em;
+    border: 1px solid #9ddcff;
+    border-radius:5px;
+  }
+  .tab h2 {
+    text-align: center;
+  }
+}
+
+/* Tablet Size */
+@media only screen 
+and (min-width : 667px) 
+and (max-width : 1024px)  { 
+  nav {
+    display: flex;
+  }
+}
+
+/* Phone Size */
+@media only screen 
+and (max-width : 667px) {
+  nav {
+    display: none;
+  }
+}

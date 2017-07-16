@@ -7,3 +7,11 @@ nav, h1 {
   align-items:flex-end;
 }
 
+body  {
+  min-width: 320px;
+  margin:auto;
+} 
+
+body * {
+  max-width: 100%;
+}
