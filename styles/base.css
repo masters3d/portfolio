@@ -32,7 +32,7 @@ a {
   transform: translateY(-.5em);
   transform: scale(1.15);
   border-radius: 5px;
-  background: cornflowerblue;
+  background: white;
 }
 
 .project-card span {
