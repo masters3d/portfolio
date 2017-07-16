@@ -7,10 +7,10 @@ $(function() {
   $.getJSON( 'data.json', function( response ) {
     let projects = (new Data(response)).projects
     //Add all the articles to the page
-    projects.forEach(function(project){
+    for (const project of projects){
       let html = project.toHtml()
       $('#articles').append(html);
-    });
+    }
     // Toggles time shows as days since today
     Controller.timeHoverRegister();
     // Adds the game menu to header
