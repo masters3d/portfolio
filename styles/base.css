@@ -11,8 +11,28 @@ header h1 {
   color: white;
 }
 
-header h2 {
-  color: #9ddcff;
+ header h2 {
+  /* color: #9ddcff; */
+  color:black;
+} 
+
+a {
+  text-decoration: none;
+}
+
+.tab {
+  background: cornflowerblue;
+  display: inline-block;
+  padding-right: .5em;
+  padding-left: .5em;
+  margin: 0px;
+}
+
+.tab:hover {
+  transform: translateY(-.5em);
+  transform: scale(1.15);
+  border-radius: 5px;
+  background: cornflowerblue;
 }
 
 .project-card span {
