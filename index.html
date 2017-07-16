@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="vendor/styles/normalize.css">
   <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="vendor/styles/icons.css">
+  <link rel="stylesheet" href="vendor/styles/fonts/icomoon/style.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
   <script type="text/x-handlebars-template" id="handlebarsTemplate">
@@ -23,6 +23,8 @@
       Masters3d
     </h1>
     <script type="text/x-handlebars-template" id="handlebarsMenuTemplate">
+    <!-- this is for the mobile menu -->
+    <h1 class="icon-menu"></h1>
     <nav>
     {{#each menuItems}}
       <a class="tab" data-icon={{iconclass}} data-type="{{this.type}}" href="#"><h2>{{this.title}}</h2></a>
