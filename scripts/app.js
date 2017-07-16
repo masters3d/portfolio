@@ -15,5 +15,9 @@ $(function() {
     Controller.timeHoverRegister();
     // Adds the game menu to header
     $('header').first().append(Controller.createMenuHtml())
+
+    // Handlers
+    Controller.handlerForNav()
   });
 })
+

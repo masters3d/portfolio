@@ -50,12 +50,29 @@ Handlebars.registerHelper('mediaCreateHtml',
     if (!media.source || media.elementType === 'video'){
       switch(media.provider){
       case 'vimeo':
-        return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        return `<iframe src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
       case 'youtube':
-        return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        return `<iframe src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
       }
     } else if (media.source && media.elementType === 'image') {
-      return `<img width="560" src="${media.source}">`
+      return `<img src="${media.source}">`
     }
     return '';
   });
+
+Controller.handlerForNav = function() {
+  $('nav').on('click', '.tab', function() {
+    $('.tab').removeClass('tabActivated')
+    $('article').fadeOut();
+    let attibute = this.getAttribute('data-type');
+    $(`*[data-type="${attibute}"]`).fadeIn();
+    $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
+  });
+
+  $('.tab[data-type="iam"]').click();
+};
+
+//TODO: Parse blogger and medium post onto the writer tab
+//http://blog.masters3d.com//feeds/posts/default
+//https://www.raymondcamden.com/2015/12/08/parsing-rss-feeds-in-javascript-options
+//https://medium.com/feed/@masters3d

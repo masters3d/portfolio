@@ -11,7 +11,7 @@
   <script type="text/x-handlebars-template" id="handlebarsTemplate">
   	<article class="project-card" data-type="{{type}}">
         <a href="{{link}}"><h2>{{name}}</h2></a>
-        <section>{{{mediaCreateHtml media}}}</section>
+        <section class="media">{{{mediaCreateHtml media}}}</section>
         <section><span>{{{type}}}</span> | <span data-date="{{date}}">{{{date}}}</span></section>
         <section>{{{description}}}</section>
      </article>
@@ -25,14 +25,18 @@
     <script type="text/x-handlebars-template" id="handlebarsMenuTemplate">
     <nav>
     {{#each menuItems}}
-      <a class="tab {{this.type}}"href="#"><h2>{{this.title}}</h2></a>
+      <a class="tab" data-type="{{this.type}}" href="#"><h2>{{this.title}}</h2></a>
     {{/each}}
     </nav>
     </script>
   </header>
   <main>
-    <section id="articles" class="tab-content">
-  </section>
+    <section id="articles">
+    <article data-type="iam">
+      This website is about me
+    </article>
+
+    </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>

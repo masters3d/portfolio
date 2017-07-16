@@ -58,7 +58,7 @@ class Data { // eslint-disable-line
   }
 }
 
-Data.menuItems = ['About|IAM','Technical|WEB', 'Creative|VID', 'Designer|ART', 'Developer|APP', 'Writer|TECH', 'Director|PMO']
+Data.menuItems = ['About|IAM','Technical|WEB', 'Creative|VID', 'Designer|ART', 'Developer|APP', 'Writer|TECH',] //'Director|PMO']
 
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
