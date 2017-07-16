@@ -19,6 +19,12 @@ and (min-width : 1024px){
   .icon-menu {
     display: none;
   }
+  #articles {
+    width:75%;
+  }
+  aside {
+    display: block;
+  }
 }
 
 /* Tablet Size */
@@ -31,6 +37,12 @@ and (max-width : 1024px)  {
 
   .icon-menu {
     display: none;
+  }
+  aside {
+    display: block;
+  }
+  #articles {
+    width:75%;
   }
 }
 
@@ -63,6 +75,12 @@ and (max-width : 667px) {
 
   .tab:hover {
     transform: none;
+  }
+  aside {
+    display: none;
+  }
+  #articles {
+    width:100%;
   }
  
 }
