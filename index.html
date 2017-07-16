@@ -22,7 +22,13 @@
     <h1>
       Masters3d!
     </h1>
-    <h2>Technical. Creative. Tactical. Director. Designer, Developer, Product Owner.</h2>
+    <script type="text/x-handlebars-template" id="handlebarsMenuTemplate">
+    <nav></nav>
+    {{#each menuItems}}
+      <a class="tab {{this.type}}"href="#"><h2>{{this.title}}</h2></a>
+    {{/each}}
+    </script>
+
   </header>
   <main>
     <section id="articles" class="tab-content">

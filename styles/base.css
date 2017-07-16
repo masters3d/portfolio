@@ -15,6 +15,10 @@ header h2 {
   color: #9ddcff;
 }
 
+.project-card span {
+  text-transform: uppercase;
+}
+
 .project-card {
   border-style: inset;
 }

@@ -16,26 +16,9 @@ class Media { // eslint-disable-line
   }
 }
 
-Handlebars.registerHelper('mediaCreateHtml',
-/** @param {Media} media 
-*/
-  function(media) {
-    if (!media.source || media.elementType === 'video'){
-      switch(media.provider){
-      case 'vimeo':
-        return `<iframe width="560" height="315" src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
-      case 'youtube':
-        return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
-      }
-    } else if (media.source && media.elementType === 'image') {
-      return `<img width="560" src="${media.source}">`
-    }
-    return '';
-  });
-
 class Project {
   /** @param {string} name
-   *  @param {string} type web | vid | app | art
+   *  @param {string} type WEB | VID | APP | ART | PMO | TECH
    *  @param {string} link
    *  @param {Media} media | HTML object as a string
    *  @param {string} description
@@ -43,7 +26,7 @@ class Project {
    *  @param {string} daysAgo
    */
   constructor (type, name, link, media, description, date) {
-    this.type = type
+    this.type = type.toLowerCase()
     this.name = name
     this.link = link
     this.media = media;
@@ -74,6 +57,8 @@ class Data { // eslint-disable-line
     return this._projects
   }
 }
+
+Data.menuItems = ['Technical|WEB', 'Creative|VID', 'Designer|ART', 'Developer|APP', 'Writer|TECH', 'Director|PMO']
 
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
