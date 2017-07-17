@@ -15,11 +15,22 @@ header h1 {
 
  header h2 {
   color:black;
-} 
+}
+
+.tab * {
+  text-align: center;
+}
 
 a {
   text-decoration: none;
 }
+
+/*type-scale.com*/
+h1{font-size: 3.99em;}
+h2{font-size: 2.827em;}
+h3{font-size: 1.99em;}
+h4, p{font-size: 1.41em;}
+
 
 .tab, .tab:hover ~ .tab,  .tabActivated + .tab:hover {
   background: cornflowerblue;
@@ -27,7 +38,7 @@ a {
   padding-right: .5em;
   padding-left: .5em;
   margin: 0px;
-} 
+}
 .tab:first-child {
   border-top-left-radius:7px;
 }
@@ -43,7 +54,7 @@ a {
 
 .tab:hover {
   transform: translateY(-.5em);
-  transform: scale(1.15);  
+  transform: scale(1.15);
 }
 
 .project-card span {
@@ -56,7 +67,7 @@ a {
 
 .project-card h3 {
   margin-bottom: 0;
-  padding-bottom: 0; 
+  padding-bottom: 0;
 }
 
 .show:before {
@@ -71,7 +82,7 @@ a {
 }
 .hide:after {
   content: "⏫"
-} 
+}
 
 a[class^='icon-'] {
   font-size: 140%;
@@ -105,5 +116,5 @@ a[class^='icon-'] {
 
 .media iframe {
    width: 100%;
-  height: 100%; 
+  height: 100%;
 }

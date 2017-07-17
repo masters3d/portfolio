@@ -2,18 +2,19 @@
 /* modified from http://stephen.io/mediaqueries/ */
 
 /* Desktop */
-@media only screen 
+@media only screen
 and (min-width : 1024px){
   nav {
     display: flex;
   }
+
+  /*type-scale.com*/
+  html{font-size: 1em;}
+
   .tab {
     width: 10em;
     border: 1px solid #9ddcff;
     border-radius:5px;
-  }
-  .tab h2 {
-    text-align: center;
   }
 
   .icon-menu {
@@ -28,12 +29,15 @@ and (min-width : 1024px){
 }
 
 /* Tablet Size */
-@media only screen 
-and (min-width : 667px) 
-and (max-width : 1024px)  { 
+@media only screen
+and (min-width : 667px)
+and (max-width : 1024px)  {
   nav {
     display: flex;
   }
+
+  /*type-scale.com*/
+  html{font-size: 0.75em;}
 
   .icon-menu {
     display: none;
@@ -47,11 +51,15 @@ and (max-width : 1024px)  {
 }
 
 /* Phone Size */
-@media only screen 
+@media only screen
 and (max-width : 667px) {
+
+  /*type-scale.com*/
+  html{font-size: 0.5em;}
+
   nav {
     display: none;
-    position: relative; 
+    position: relative;
   }
 
   .icon-menu {
@@ -82,5 +90,5 @@ and (max-width : 667px) {
   #articles {
     width:100%;
   }
- 
+
 }
