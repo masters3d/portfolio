@@ -25,12 +25,6 @@ a {
   text-decoration: none;
 }
 
-/*type-scale.com*/
-h1{font-size: 3.99em;}
-h2{font-size: 2.827em;}
-h3{font-size: 1.99em;}
-h4, p{font-size: 1.41em;}
-
 
 .tab, .tab:hover ~ .tab,  .tabActivated + .tab:hover {
   background: cornflowerblue;

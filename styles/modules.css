@@ -1,5 +1,5 @@
 
-/* modified from http://stephen.io/mediaqueries/ */
+/* modified from http://stephen.io/mediaqueries/ and type-scale.com**/
 
 /* Desktop */
 @media only screen
@@ -8,8 +8,7 @@ and (min-width : 1024px){
     display: flex;
   }
 
-  /*type-scale.com*/
-  html{font-size: 1em;}
+  html{font-size: 1.25em;}
 
   .tab {
     width: 10em;
@@ -36,8 +35,7 @@ and (max-width : 1024px)  {
     display: flex;
   }
 
-  /*type-scale.com*/
-  html{font-size: 0.75em;}
+  html{font-size: 0.85em;}
 
   .icon-menu {
     display: none;
@@ -53,9 +51,6 @@ and (max-width : 1024px)  {
 /* Phone Size */
 @media only screen
 and (max-width : 667px) {
-
-  /*type-scale.com*/
-  html{font-size: 0.5em;}
 
   nav {
     display: none;
