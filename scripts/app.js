@@ -4,7 +4,7 @@
 // Point of Entry of the app
 // Load JSON and popluate the projects data
 $(function() {
-  $.getJSON( 'data/data.json', function( response ) {
+  $.getJSON( 'data/projects.json', function( response ) {
     let projects = (new Data(response)).projects
     //Add all the articles to the page
     for (const project of projects){
