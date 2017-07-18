@@ -40,12 +40,13 @@ Project.prototype.getId = function() {
 }
 
 class Data { // eslint-disable-line
-  /** @param {Object[]} jsonData */ 
+  /** @param {Object} jsonData */ 
   constructor(jsonData) {
-
+    /** @type {Date} updated */
+    this.updated = new Date(jsonData.updated)
     /** @type {Project[]} _projects */
     let _projects = []
-    for(let each of jsonData) {
+    for(let each of jsonData.projects) {
       let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
       _projects.push(project)
     }
@@ -59,6 +60,20 @@ class Data { // eslint-disable-line
   get projects() {
     return this._projects
   }
+}
+
+Data.prototype.isStale = function() {
+  const interval = 900000 // 15 mins
+  let current = (new Date).getTime()
+  let last = this.updated.getTime()
+  let difference = current - last
+  return (difference > interval)
+}
+
+Data.prototype.toJSON = function() {
+  let updated = this.updated
+  let projects = this.projects
+  return JSON.stringify({updated, projects })
 }
 
 Data.menuItems = [
@@ -81,18 +96,18 @@ Data.load = loadLocalStorage
 Data.save = saveLocalStorage
 
 function loadLocalStorage() {
-  let projectsRaw = localStorage.getItem('projects');
-  if (projectsRaw !== null) {
-    let projects = JSON.parse(projectsRaw)
-    return {success:true, projects}
+  let rawData = localStorage.getItem('masters3d');
+  if (rawData !== null) {
+    let data = JSON.parse(rawData)
+    return {success:true, data}
   } else {
-    return {success:false, projects:{}}
+    return {success:false, data:{}}
   }
 }
 
-/** @param {Object[]} projects */
-function saveLocalStorage(projects) {
-  localStorage.setItem('projects', JSON.stringify(projects))
+/** @param {Object} data */
+function saveLocalStorage(data) {
+  localStorage.setItem('masters3d', JSON.stringify(data))
 }
 
 
