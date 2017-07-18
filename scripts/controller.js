@@ -82,7 +82,7 @@ Controller.handlerForNav = function() {
     $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
   });
 
-  $('.tab[data-type="iam"]').click();
+  $('.tab:first-child').click();
 };
 
 Controller.handlerShowAndHide = function() {
