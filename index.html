@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="vendor/styles/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <script type="text/x-handlebars-template" id="handlebarsTemplate">
+  	<article style="display: none;"class="project-card" data-type="{{type}}">
+        <a href="{{link}}"><h3>{{name}}</h3></a>
+        <section><span class="{{applyIconType type}}">{{{type}}}</span> | <a class='show' href=""></a> | <span data-date="{{date}}">{{{date}}}</span></section>
+        <section class="media">{{{mediaCreateHtml media}}}</section>
+        <section>{{{description}}}</section>
+     </article>
+  </script>
+</head>
+<body>
+  <header>
+    <h1>
+      Masters3d
+    </h1>
+    <script type="text/x-handlebars-template" id="handlebarsMenuTemplate">
+    <!-- this is for the mobile menu -->
+    <h1 class="icon-menu"></h1>
+    <nav>
+    {{#each menuItems}}
+      <a class="tab" data-icon={{iconclass}} data-type="{{this.type}}" href="#"><h3>{{this.title}}</h3></a>
+    {{/each}}
+    </nav>
+    </script>
+  </header>
+  <main>
+  <aside>
+    <a href="">Show All Media</a>
+    <br>
+    <h3>Recent Projects:</h3>
+    <ul>
+      <li>Cool Projet A</li>
+      <li>Cool Projet B</li>
+      <li>Cool Projet C</li>
+    </ul>
+  </aside>
+    <section id="articles">
+    <article data-type="iam">
+
+      <h3>This website is about me</h3>
+      <p> In an interesting set of events, I’ve come full circle back to Software Engineering. In my recrudescence to this profession, I’ve acquired experiences that have shaped me into the engineer I am today. Most of the hard problems that I’ve encountered as a web developer, video editor, digital producer, photographer, cinematographer, 3d artist or project manager, were resolved by manual crafted software that was specific to the task. These tasks included scripts that would automate batch changes, reporting tools with automatic formatting and input distribution, plug ins for the different software packages and the design of a custom company wide pricing model system. Programing has always been my hobby and I am excited to make it part of my career. I am mostly interested in mobile development using modern languages </p>
+    </article>
+    </section>
+  </main>
+  <footer>
+      <a class="icon-github" href="https://github.com/masters3d"></a>
+      <a class="icon-twitter" href="https://twitter.com/masters3d"></a>
+      <a class="icon-linkedin" href="https://www.linkedin.com/in/cheyojimenez/"></a>
+      <a class="icon-vimeo" href="https://vimeo.com/masters3d/"></a>
+      <a class="icon-medium" href="https://medium.com/@masters3d"></a>
+    </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="scripts/model.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controller.js"></script>
+</body>
+</html>

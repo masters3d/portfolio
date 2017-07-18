@@ -1,0 +1,39 @@
+
+
+/* http://howtocenterincss.com/#contentType=div&horizontal=center&vertical=bottom */
+nav, h1 {
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+body  {
+  min-width: 320px;
+  margin:auto;
+} 
+
+body * {
+  max-width: 100%;
+}
+
+main {
+  padding: 1em;
+}
+
+#articles {
+  float: left;
+  width: 75%;
+}
+
+aside {
+  float: right;  
+  width: 25%;
+}
+
+footer {
+  clear: both;
+  text-align:center;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  display: block;
+}

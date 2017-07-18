@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "scripts/app.js",
+  "dependencies": {
+    "@types/handlebars": "^4.0.34",
+    "@types/jquery": "^3.2.8",
+    "@types/node": "^8.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masters3d/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masters3d/portfolio/issues"
+  },
+  "homepage": "https://github.com/masters3d/portfolio#readme"
+}
