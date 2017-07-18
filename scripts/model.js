@@ -109,5 +109,3 @@ function loadLocalStorage() {
 function saveLocalStorage(data) {
   localStorage.setItem('masters3d', JSON.stringify(data))
 }
-
-

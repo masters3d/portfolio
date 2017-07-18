@@ -16,14 +16,14 @@ $(function() {
   }
 })
 
-/** @param {Object} rawData */ 
+/** @param {Object} rawData */
 function setupAndSave(rawData) {
   setup(rawData)
   rawData.updated = (new Date()).toJSON()
   Data.save(rawData)
 }
 
-/** @param {Object} rawData */ 
+/** @param {Object} rawData */
 function setup(rawData) {
   let data = new Data(rawData)
   let projects = data.projects
