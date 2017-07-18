@@ -62,7 +62,14 @@ class Data { // eslint-disable-line
   }
 }
 
-Data.menuItems = ['Home|HOM|icon-home', 'About|IAM|icon-trophy','Technical|WEB|icon-codepen', 'Creative|VID|icon-video-camera', 'Designer|ART|icon-embed', 'Developer|APP|icon-code',]// 'Writer OR Author|TECH|icon-mug', 'Director|PMO']
+Data.menuItems = [
+  'Home|HOM|icon-home',
+  'About|IAM|icon-trophy',
+  'Technical|WEB|icon-codepen',
+  'Producer|VID|icon-video-camera',
+  'Creative|PRO|icon-mug',
+  'Developer|APP|icon-rocket',
+]
 
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
