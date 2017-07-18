@@ -66,8 +66,8 @@ Data.menuItems = [
   'Home|HOM|icon-home',
   'About|IAM|icon-trophy',
   'Technical|WEB|icon-codepen',
-  'Producer|VID|icon-video-camera',
   'Creative|PRO|icon-mug',
+  'Producer|VID|icon-video-camera',
   'Developer|APP|icon-rocket',
 ]
 
