@@ -7,7 +7,7 @@ var Controller = {}
 // Display the date as a relative number of 'days ago' on hover
 Controller.timeHoverRegister = function() { // eslint-disable-line
   $('span[data-date]').hover(function(){
-  /** @type {HTMLSpanElement} span */ 
+  /** @type {HTMLSpanElement} span */
     const span = this
     const today = new Date()
     const attibute = span.getAttribute('data-date')
@@ -57,7 +57,7 @@ Handlebars.registerHelper('applyIconType',
   })
 
 Handlebars.registerHelper('mediaCreateHtml',
-/** @param {Media} media 
+/** @param {Media} media
 */
   function(media) {
     if (!media.source || media.elementType === 'video'){

@@ -40,7 +40,7 @@ Project.prototype.getId = function() {
 }
 
 class Data { // eslint-disable-line
-  /** @param {Object} jsonData */ 
+  /** @param {Object} jsonData */
   constructor(jsonData) {
     /** @type {Date} updated */
     this.updated = new Date(jsonData.updated)
