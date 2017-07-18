@@ -45,7 +45,6 @@ class Data { // eslint-disable-line
 
     /** @type {Project[]} _projects */
     let _projects = []
-
     for(let each of jsonData) {
       let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
       _projects.push(project)
@@ -77,3 +76,23 @@ Project.prototype.toHtml = function() {
   let html = compiled(this);
   return html;
 };
+
+Data.load = loadLocalStorage
+Data.save = saveLocalStorage
+
+function loadLocalStorage() {
+  let projectsRaw = localStorage.getItem('projects');
+  if (projectsRaw !== null) {
+    let projects = JSON.parse(projectsRaw)
+    return {success:true, projects}
+  } else {
+    return {success:false, projects:{}}
+  }
+}
+
+/** @param {Object[]} projects */
+function saveLocalStorage(projects) {
+  localStorage.setItem('projects', JSON.stringify(projects))
+}
+
+
