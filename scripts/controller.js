@@ -44,17 +44,18 @@ Controller.createMenuHtml = function() {
   return html;
 }
 
-Handlebars.registerHelper('applyIconType',
 /** @param {string} type */
-  function(type){
-    for(let each of Data.menuItems) {
-      let [ , category, iconClass] = each.split('|')
-      if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
-        return iconClass;
-      }
+Controller.iconTypeClass = function(type){
+  for(let each of Data.menuItems) {
+    let [ , category, iconClass] = each.split('|')
+    if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
+      return iconClass;
     }
-    return ''
-  })
+  }
+  return ''
+}
+
+Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media
@@ -98,11 +99,12 @@ Controller.handlerShowAndHide = function() {
   });
 }
 /** @param {Project[]} projects */
-Controller.createRecentList = function(projects) {
+Controller.createRecentListOnDOM = function(projects) {
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
-    cloned.find('a').attr('hred', each.link)
+    cloned.find('a').attr('href', each.link)
     cloned.find('a').html(each.name.substring(0, 18) + '...' )
+    cloned.find('a').addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
   $('aside ul li:first-child').detach()

@@ -1,5 +1,8 @@
-
-/* modified from http://stephen.io/mediaqueries/ and type-scale.com**/
+aside ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: .8em;
+}
 
 .tab, .tab:hover ~ .tab,  .tabActivated + .tab:hover {
   background: cornflowerblue;
@@ -27,6 +30,8 @@
   transform: translateY(-.5em);
   transform: scale(1.15);
 }
+
+/* modified from http://stephen.io/mediaqueries/ and type-scale.com**/
 
 /* Desktop */
 @media only screen
