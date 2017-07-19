@@ -42,7 +42,7 @@ function setup(rawData) {
   Controller.handlerShowAndHide()
 
   // Aside generation
-  Controller.createRecentList()
+  Controller.createRecentList(projects)
   // hiding all the media sections
   $('.media').hide()
 }

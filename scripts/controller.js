@@ -97,7 +97,13 @@ Controller.handlerShowAndHide = function() {
     }
   });
 }
-
-Controller.createRecentList = function() {
-  $('aside ul li:first-child').hide()
+/** @param {Project[]} projects */
+Controller.createRecentList = function(projects) {
+  for(let each of projects) {
+    let cloned = $('aside ul li:first-child').clone()
+    cloned.find('a').attr('hred', each.link)
+    cloned.find('a').html(each.name.substring(0, 18) + '...' )
+    $('aside ul').append(cloned)
+  }
+  $('aside ul li:first-child').detach()
 }
