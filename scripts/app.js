@@ -41,6 +41,8 @@ function setup(rawData) {
   Controller.handlerForNav()
   Controller.handlerShowAndHide()
 
+  // Aside generation
+  Controller.createRecentList()
   // hiding all the media sections
   $('.media').hide()
 }

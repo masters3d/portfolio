@@ -96,5 +96,8 @@ Controller.handlerShowAndHide = function() {
       this.className = 'show'
     }
   });
+}
 
+Controller.createRecentList = function() {
+  $('aside ul li:first-child').hide()
 }
