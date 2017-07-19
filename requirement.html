@@ -10,7 +10,9 @@
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.1/dist/showdown.min.js"></script>
     <script type="text/javascript">
     let org = 'codefellows-seattle-301d27'
-    let assigment = 'README.md' // 'PORTFOLIO-ASSIGNMENT.md' or 'README.md'
+    let readme = window.location.search.substr(1)
+    // if you call with param it will do readme http://server/requirement.html?readme
+    let assigment = readme ? 'README.md' : 'PORTFOLIO-ASSIGNMENT.md'
     let respos = []
     $.getJSON(`https://api.github.com/orgs/${org}/repos`,
       function(data){
