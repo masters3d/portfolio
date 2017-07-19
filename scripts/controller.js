@@ -103,7 +103,7 @@ Controller.createRecentListOnDOM = function(projects) {
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
     cloned.find('a').attr('href', each.link)
-    cloned.find('a').html(each.name.substring(0, 18) + '...' )
+    cloned.find('a').html(each.name.substring(0, 14) + '...' )
     cloned.find('a').addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
