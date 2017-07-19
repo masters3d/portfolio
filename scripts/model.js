@@ -40,13 +40,13 @@ Project.prototype.getId = function() {
 }
 
 class Data { // eslint-disable-line
-  /** @param {Object[]} jsonData */ 
+  /** @param {Object} jsonData */
   constructor(jsonData) {
-
+    /** @type {Date} updated */
+    this.updated = new Date(jsonData.updated)
     /** @type {Project[]} _projects */
     let _projects = []
-
-    for(let each of jsonData) {
+    for(let each of jsonData.projects) {
       let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
       _projects.push(project)
     }
@@ -62,7 +62,28 @@ class Data { // eslint-disable-line
   }
 }
 
-Data.menuItems = ['About|IAM|icon-home','Technical|WEB|icon-codepen', 'Creative|VID|icon-video-camera', 'Designer|ART|icon-embed', 'Developer|APP|icon-code', 'Writer|TECH|icon-mug',] //'Director|PMO']
+Data.prototype.isStale = function() {
+  const interval = 900000 // 15 mins
+  let current = (new Date).getTime()
+  let last = this.updated.getTime()
+  let difference = current - last
+  return (difference > interval)
+}
+
+Data.prototype.toJSON = function() {
+  let updated = this.updated
+  let projects = this.projects
+  return JSON.stringify({updated, projects })
+}
+
+Data.menuItems = [
+  'Home|HOM|icon-home',
+  'About|IAM|icon-trophy',
+  'Technical|WEB|icon-codepen',
+  'Creative|PRO|icon-mug',
+  'Producer|VID|icon-video-camera',
+  'Developer|APP|icon-rocket',
+]
 
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
@@ -70,3 +91,21 @@ Project.prototype.toHtml = function() {
   let html = compiled(this);
   return html;
 };
+
+Data.load = loadLocalStorage
+Data.save = saveLocalStorage
+
+function loadLocalStorage() {
+  let rawData = localStorage.getItem('masters3d');
+  if (rawData !== null) {
+    let data = JSON.parse(rawData)
+    return {success:true, data}
+  } else {
+    return {success:false, data:{}}
+  }
+}
+
+/** @param {Object} data */
+function saveLocalStorage(data) {
+  localStorage.setItem('masters3d', JSON.stringify(data))
+}
