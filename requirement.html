@@ -10,14 +10,19 @@
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.1/dist/showdown.min.js"></script>
     <script type="text/javascript">
     let org = 'codefellows-seattle-301d27'
-    let assigment = 'PORTFOLIO-ASSIGNMENT.md'
+    let assigment = 'README.md' // 'PORTFOLIO-ASSIGNMENT.md' or 'README.md'
     let respos = []
     $.getJSON(`https://api.github.com/orgs/${org}/repos`,
       function(data){
           for(let each of data) {
             respos.push(each.name)
           }
-          respos.sort()
+          respos.sort(function(a, b) {
+            let aInt = parseInt(a.substring(0,2))
+            let bInt  = parseInt(b.substring(0,2))
+            return ( aInt < bInt) ? -1: 1
+          })
+
           for(let each of respos) {
             $.get(`https://raw.githubusercontent.com/${org}/${each}/master/${assigment}`,
               function(data) {
