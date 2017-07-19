@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Requirements Portfolio</title>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.1/dist/showdown.min.js"></script>
+    <script type="text/javascript">
+    let org = 'codefellows-seattle-301d27'
+    let assigment = 'PORTFOLIO-ASSIGNMENT.md'
+    let respos = []
+    $.getJSON(`https://api.github.com/orgs/${org}/repos`,
+      function(data){
+          for(let each of data) {
+            respos.push(each.name)
+          }
+          respos.sort()
+          for(let each of respos) {
+            $.get(`https://raw.githubusercontent.com/${org}/${each}/master/${assigment}`,
+              function(data) {
+                let converter = new showdown.Converter()
+                let html = converter.makeHtml(data)
+                $('body').append(`<div style="border-style: solid;">${html}</div>`)
+            })
+          }
+      })
+    </script>
+  </body>
+</html>
