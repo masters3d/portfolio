@@ -5,8 +5,8 @@
     <title>Requirements Portfolio</title>
   </head>
   <body>
+    <button id="switcher" type="button" name="button"><h1>SWITCH VIEW</h1></button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.1/dist/showdown.min.js"></script>
     <script type="text/javascript">
     let org = 'codefellows-seattle-301d27'
@@ -34,6 +34,14 @@
             })
           }
       })
+      switcher.onclick = function(){
+        if (readme) {
+          //https://stackoverflow.com/questions/7241851/how-do-i-reload-the-page-without-the-query-parameters
+          window.location = window.location.href.split("?")[0];
+        } else {
+          window.location = '?readme'
+        }
+      };
     </script>
   </body>
 </html>
