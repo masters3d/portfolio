@@ -63,12 +63,12 @@ Handlebars.registerHelper('mediaCreateHtml',
     if (!media.source || media.elementType === 'video'){
       switch(media.provider){
       case 'vimeo':
-        return `<iframe src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        return `<iframe src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
       case 'youtube':
-        return `<iframe src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        return `<iframe src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
       }
     } else if (media.source && media.elementType === 'image') {
-      return `<img src="${media.source}">`
+      return `<img src="" data-src="${media.source}">`
     }
     return '';
   });
@@ -87,11 +87,15 @@ Controller.handlerForNav = function() {
 Controller.handlerShowAndHide = function() {
   $('.show, .hide').on('click', function(event){
     event.preventDefault()
+    let mediaContainer = $(this).parent().siblings('.media')
+    let mediaElemet = mediaContainer.children().first()
+    let mediaSource = mediaElemet.attr('data-src') || ''
     if (this.className === 'show') {
-      $(this).parent().siblings('.media').fadeIn()
+      mediaElemet.attr('src', mediaSource )
+      mediaContainer.fadeIn()
       this.className = 'hide'
     } else if (this.className === 'hide') {
-      $(this).parent().siblings('.media').fadeOut()
+      mediaContainer.hide()
       this.className = 'show'
     }
   });
