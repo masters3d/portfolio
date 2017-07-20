@@ -1,3 +1,23 @@
+
+.media:hover {
+  height: 100%;
+  width: 100%; 
+  overflow: none;
+}
+
+/* Inspired by https://benmarshall.me/resize-videos-proportionally-intrinsic-ratios/ */
+.media-video:hover {
+  padding-bottom: 55%;
+  position: relative;
+}
+
+/* Video Fix source https://benmarshall.me/responsive-iframes/ */
+.media:hover iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}   
+
 aside ul {
   list-style-type: none;
   padding-left: 0;

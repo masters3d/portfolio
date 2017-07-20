@@ -60,17 +60,23 @@ Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
   function(media) {
+    let videoSize = 'width="1280" height="720"'
+    let className = ''
+    let toReturn = ''
     if (!media.source || media.elementType === 'video'){
+      className = 'media-video'
       switch(media.provider){
       case 'vimeo':
-        return `<iframe src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${videoSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        break;
       case 'youtube':
-        return `<iframe src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${videoSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        break;
       }
     } else if (media.source && media.elementType === 'image') {
-      return `<img src="" data-src="${media.source}">`
+      toReturn = `<img src="" data-src="${media.source}">`
     }
-    return '';
+    return `<section class="media ${className}">${toReturn}</section>`;
   });
 
 Controller.handlerForNav = function() {
