@@ -44,21 +44,21 @@ Controller.createMenuHtml = function() {
   return html;
 }
 
-Handlebars.registerHelper('applyIconType',
 /** @param {string} type */
-  function(type){
-    for(let each of Data.menuItems) {
-      let [ , category, iconClass] = each.split('|')
-      if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
-        return iconClass;
-      }
+Controller.iconTypeClass = function(type){
+  for(let each of Data.menuItems) {
+    let [ , category, iconClass] = each.split('|')
+    if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
+      return iconClass;
     }
-    return ''
-  })
+  }
+  return ''
+}
+
+Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 
 Handlebars.registerHelper('mediaCreateHtml',
-/** @param {Media} media
-*/
+/** @param {Media} media */
   function(media) {
     if (!media.source || media.elementType === 'video'){
       switch(media.provider){
@@ -81,7 +81,6 @@ Controller.handlerForNav = function() {
     $(`*[data-type="${attibute}"]`).fadeIn();
     $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
   });
-
   $('.tab:first-child').click();
 };
 
@@ -96,5 +95,15 @@ Controller.handlerShowAndHide = function() {
       this.className = 'show'
     }
   });
-
+}
+/** @param {Project[]} projects */
+Controller.createRecentListOnDOM = function(projects) {
+  for(let each of projects) {
+    let cloned = $('aside ul li:first-child').clone()
+    cloned.find('a').attr('href', each.link)
+    cloned.find('a').html(each.name.substring(0, 14) + '...' )
+    cloned.find('a').addClass(Controller.iconTypeClass(each.type))
+    $('aside ul').append(cloned)
+  }
+  $('aside ul li:first-child').detach()
 }
