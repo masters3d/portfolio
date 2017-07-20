@@ -40,6 +40,7 @@ function setup(rawData) {
   // Handlers
   Controller.handlerForNav()
   Controller.handlerShowAndHide()
+  Controller.handlerShowAndHideAll()
 
   // Aside generation
   Controller.createRecentListOnDOM(projects)

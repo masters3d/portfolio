@@ -96,6 +96,20 @@ Controller.handlerForNav = function() {
   firstTab.click();
 };
 
+Controller.handlerShowAndHideAll = function() {
+  $('aside a').first().on('click', function(event){
+    event.preventDefault()
+    let link = $(this)
+    if (link.html() === 'Show All Media') {
+      link.html('Hide All Media')
+      $('.project-card .show').click()
+    } else {
+      link.html('Show All Media')
+      $('.project-card .hide').click()
+    }
+  })
+}
+
 Controller.handlerShowAndHide = function() {
   $('.show, .hide').on('click', function(event){
     event.preventDefault()
