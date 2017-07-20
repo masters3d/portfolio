@@ -7,4 +7,5 @@ app.use(express.static('.'))
 
 app.listen(port, function() {
   console.log(`App is running on port ${port}`)
+  console.log(`http://localhost:${port}/`)
 })

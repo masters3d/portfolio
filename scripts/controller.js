@@ -58,8 +58,7 @@ Controller.iconTypeClass = function(type){
 Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 
 Handlebars.registerHelper('mediaCreateHtml',
-/** @param {Media} media
-*/
+/** @param {Media} media */
   function(media) {
     if (!media.source || media.elementType === 'video'){
       switch(media.provider){
@@ -82,7 +81,6 @@ Controller.handlerForNav = function() {
     $(`*[data-type="${attibute}"]`).fadeIn();
     $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
   });
-
   $('.tab:first-child').click();
 };
 

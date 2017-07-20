@@ -63,7 +63,8 @@ class Data { // eslint-disable-line
 }
 
 Data.prototype.isStale = function() {
-  const interval = 900000 // 15 mins
+  const minutes = 15
+  const interval = minutes * 60 * 100
   let current = (new Date).getTime()
   let last = this.updated.getTime()
   let difference = current - last
