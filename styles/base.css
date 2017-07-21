@@ -38,8 +38,24 @@ a {
   padding-bottom: 0;
 }
 
-a[class^='icon-'] {
+a[class^='icon-'], .asideLink:hover {
   font-size: 140%;
+}
+
+.asideLink {
+  font-size: 120%;
+}
+
+li[class^='icon-']:hover {
+  color: blue;
+}
+
+.asideLink:before {
+  content: ' ';
+}
+
+.asideLink {
+  color: black;
 }
 
 .media {

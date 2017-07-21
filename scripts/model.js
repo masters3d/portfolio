@@ -89,7 +89,7 @@ Data.menuItems = [
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
-  let html = compiled(this);
+  let html = compiled(this).replace('id="#"', `id="${this.getId()}"`);
   return html;
 };
 

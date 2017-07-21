@@ -71,9 +71,11 @@ and (min-width : 1024px){
   .icon-menu {
     display: none;
   }
+
   #articles {
     width:75%;
   }
+  
   aside {
     display: block;
   }

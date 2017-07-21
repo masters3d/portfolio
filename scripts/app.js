@@ -45,6 +45,7 @@ function setup(rawData) {
   Controller.handlerShowAndHide()
   Controller.handlerShowAndHideAll()
   Controller.handlerRecentListShowAllName()
+  Controller.handlerRecentListTakeMeToTab()
 
   // hiding all the media sections
   $('.media').hide()

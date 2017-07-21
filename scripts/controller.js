@@ -126,31 +126,53 @@ Controller.handlerShowAndHide = function() {
     }
   });
 }
+
+/** @param {string} name */
+Controller.shorternName = function(name) {
+  let lengthToShorten = 14
+  if (name.length < lengthToShorten) {
+    return name;
+  }
+  return name.substring(0, lengthToShorten) + '...'
+}
+
+
 /** @param {Project[]} projects */
 Controller.createRecentListOnDOM = function(projects) {
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
-    cloned.find('a').attr('href', each.link)
+    cloned.find('a').attr('href', '#' + each.getId() )
     cloned.find('a').attr('data-name', each.name)
+    cloned.find('a').attr('data-type', each.type)
     cloned.find('a').addClass('asideLink')
-    cloned.find('a').html(each.name.substring(0, 14) + '...' )
-    cloned.find('a').addClass(Controller.iconTypeClass(each.type))
+    cloned.find('a').html(Controller.shorternName(each.name))
+    cloned.addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
   $('aside ul li:first-child').detach()
 }
+
 Controller.handlerRecentListShowAllName = function() {
-  console.log('i am being called')
-  console.log( $('.asideLink'))
   $('.asideLink').hover(function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
     link.html(content)
-    console.log('on hoser')
   }, function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
-    link.html(content.substring(0, 14) + '...')
-    console.log('hover over')
+    link.html(Controller.shorternName(content))
+  })
+}
+
+Controller.handlerRecentListTakeMeToTab = function() {
+  $('.asideLink').on('click', function(event){
+    event.preventDefault()
+    let link = $(this)
+    let dataType = link.attr('data-type') || ''
+    let anchor = (link.attr('href') || '#')
+    $(`.tab[data-type="${dataType}"]`).first().click()
+    let showHide = $(`${anchor}`).children('section').children('a').first()
+    showHide.click()
+    window.location.href = anchor;
   })
 }
