@@ -1,7 +1,7 @@
 
 
 /* http://howtocenterincss.com/#contentType=div&horizontal=center&vertical=bottom */
-nav, h1 {
+nav, header h1 {
   display:flex;
   justify-content:center;
   align-items:flex-end;
@@ -10,7 +10,7 @@ nav, h1 {
 body  {
   min-width: 320px;
   margin:auto;
-} 
+}
 
 body * {
   max-width: 100%;
@@ -26,7 +26,7 @@ main {
 }
 
 aside {
-  float: right;  
+  float: right;
   width: 25%;
 }
 
@@ -36,4 +36,40 @@ footer {
   padding-top: 5em;
   padding-bottom: 5em;
   display: block;
+}
+
+/* Project Card Styles */
+.project-card span {
+  text-transform: uppercase;
+}
+
+.project-card {
+  border-style: inset;
+  display: none;
+}
+
+.project-card h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* .media Styles */
+.media {
+  width: 40em;
+  height: 20em;
+  overflow: hidden;
+}
+
+.media * {
+  display: block;
+}
+
+.media iframe {
+   width: 100%;
+  height: 100%;
+}
+
+/* Tab Styles */
+.tab * {
+  text-align: center;
 }
