@@ -13,46 +13,14 @@ header h1 {
   padding-top: 0;
 }
 
- header h2 {
+header h2 {
   color:black;
-}
-
-.tab * {
-  text-align: center;
 }
 
 a {
   text-decoration: none;
 }
 
-.project-card span {
-  text-transform: uppercase;
-}
-
-.project-card {
-  border-style: inset;
-}
-
-.project-card h3 {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 a[class^='icon-'] {
   font-size: 140%;
-}
-
-.media {
-  width: 40em;
-  height: 20em;
-  overflow: hidden;
-}
-.media * {
-
-  display: block;
-}
-
-.media iframe {
-   width: 100%;
-  height: 100%;
 }
