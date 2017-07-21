@@ -1,7 +1,7 @@
 'use strict';
 const port = parseInt(process.env.PORT || '3000')
 const express = require('express')
-var app = express()
+let app = express()
 
 app.use(express.static('.'))
 

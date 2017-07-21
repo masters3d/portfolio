@@ -2,7 +2,7 @@
 /// <reference types="handlebars" />
 'use strict';
 
-var Controller = {}
+let Controller = {}
 
 // Display the date as a relative number of 'days ago' on hover
 Controller.timeHoverRegister = function() { // eslint-disable-line

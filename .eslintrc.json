@@ -21,6 +21,7 @@
     "es6": true
   },
   "rules": {
+    "no-var": "error",
     "eqeqeq": ["error", "always"],
     "no-template-curly-in-string": "error",
     "no-console": "off",
