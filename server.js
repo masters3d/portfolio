@@ -6,6 +6,6 @@ var app = express()
 app.use(express.static('.'))
 
 app.listen(port, function() {
-  console.log(`App is running on port ${port}`)
-  console.log(`http://localhost:${port}/`)
+  console.info(`App is running on port ${port}`)
+  console.info(`http://localhost:${port}/`)
 })

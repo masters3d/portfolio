@@ -60,50 +60,119 @@ Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
   function(media) {
+    let videoSize = 'width="1280" height="720"'
+    let className = ''
+    let toReturn = ''
     if (!media.source || media.elementType === 'video'){
+      className = 'media-video'
       switch(media.provider){
       case 'vimeo':
-        return `<iframe src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${videoSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        break;
       case 'youtube':
-        return `<iframe src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${videoSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        break;
       }
     } else if (media.source && media.elementType === 'image') {
-      return `<img src="${media.source}">`
+      toReturn = `<img src="" data-src="${media.source}">`
     }
-    return '';
+    return `<section class="media ${className}">${toReturn}</section>`;
   });
 
 Controller.handlerForNav = function() {
+  let firstTab = $('.tab:first-child')
   $('nav').on('click', '.tab', function() {
     $('.tab').removeClass('tabActivated')
     $('article').hide();
     let attibute = this.getAttribute('data-type');
     $(`*[data-type="${attibute}"]`).fadeIn();
     $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
+    if (attibute === 'hom' || attibute === 'iam') {
+      $('aside a').first().hide()
+    } else {
+      $('aside a').first().show()
+    }
   });
-  $('.tab:first-child').click();
+  firstTab.click();
 };
+
+Controller.handlerShowAndHideAll = function() {
+  $('aside a').first().on('click', function(event){
+    event.preventDefault()
+    let link = $(this)
+    if (link.html() === 'Show All Media') {
+      link.html('Hide All Media')
+      $('.project-card .show').click()
+    } else {
+      link.html('Show All Media')
+      $('.project-card .hide').click()
+    }
+  })
+}
 
 Controller.handlerShowAndHide = function() {
   $('.show, .hide').on('click', function(event){
     event.preventDefault()
+    let mediaContainer = $(this).parent().siblings('.media')
+    let mediaElemet = mediaContainer.children().first()
+    let mediaSource = mediaElemet.attr('data-src') || ''
     if (this.className === 'show') {
-      $(this).parent().siblings('.media').fadeIn()
+      mediaElemet.attr('src', mediaSource )
+      mediaContainer.fadeIn()
       this.className = 'hide'
     } else if (this.className === 'hide') {
-      $(this).parent().siblings('.media').fadeOut()
+      mediaContainer.hide()
       this.className = 'show'
     }
   });
 }
+
+/** @param {string} name */
+Controller.shorternName = function(name) {
+  let lengthToShorten = 14
+  if (name.length < lengthToShorten) {
+    return name;
+  }
+  return name.substring(0, lengthToShorten) + '...'
+}
+
+
 /** @param {Project[]} projects */
 Controller.createRecentListOnDOM = function(projects) {
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
-    cloned.find('a').attr('href', each.link)
-    cloned.find('a').html(each.name.substring(0, 14) + '...' )
-    cloned.find('a').addClass(Controller.iconTypeClass(each.type))
+    cloned.find('a').attr('href', '#' + each.getId() )
+    cloned.find('a').attr('data-name', each.name)
+    cloned.find('a').attr('data-type', each.type)
+    cloned.find('a').addClass('asideLink')
+    cloned.find('a').html(Controller.shorternName(each.name))
+    cloned.addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
   $('aside ul li:first-child').detach()
+}
+
+Controller.handlerRecentListShowAllName = function() {
+  $('.asideLink').hover(function(){
+    let link = $(this)
+    let content = link.attr('data-name') || ''
+    link.html(content)
+  }, function(){
+    let link = $(this)
+    let content = link.attr('data-name') || ''
+    link.html(Controller.shorternName(content))
+  })
+}
+
+Controller.handlerRecentListTakeMeToTab = function() {
+  $('.asideLink').on('click', function(event){
+    event.preventDefault()
+    let link = $(this)
+    let dataType = link.attr('data-type') || ''
+    let anchor = (link.attr('href') || '#')
+    $(`.tab[data-type="${dataType}"]`).first().click()
+    let showHide = $(`${anchor}`).children('section').children('a').first()
+    showHide.click()
+    window.location.href = anchor;
+  })
 }
