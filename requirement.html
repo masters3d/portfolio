@@ -20,13 +20,12 @@
             respos.push(each.name)
           }
           respos.sort(function(a, b) {
-            let aInt = parseInt(a.substring(0,2))
-            let bInt  = parseInt(b.substring(0,2))
-            return ( aInt < bInt) ? -1: 1
+            return a.substring(0,2).localeCompare(b.substring(0,2))
           })
 
           for(let each of respos) {
-            $.get(`https://raw.githubusercontent.com/${org}/${each}/master/${assigment}`,
+            let repo = `https://raw.githubusercontent.com/${org}/${each}/master/${assigment}`
+            $.get(repo,
               function(data) {
                 let converter = new showdown.Converter()
                 let html = converter.makeHtml(data)
@@ -36,7 +35,7 @@
       })
       switcher.onclick = function(){
         if (readme) {
-          //https://stackoverflow.com/questions/7241851/how-do-i-reload-the-page-without-the-query-parameters
+          //source https://stackoverflow.com/questions/7241851/how-do-i-reload-the-page-without-the-query-parameters
           window.location = window.location.href.split("?")[0];
         } else {
           window.location = '?readme'
