@@ -176,13 +176,13 @@
     "name": "WP School Canopies",
     "link": "https://www.youtube.com/watch?v=vOb_Xu74ras",
     "media": {
-      "source": "https://www.youtube.com/embed/vOb_Xu74ras?ecver=1",
+      "source": "https://vimeo.com/96812830",
       "elementType": "video",
-      "id": "vOb_Xu74ras",
-      "provider": "youtube"
+      "id": "96812830",
+      "provider": "vimeo"
     },
-    "description": "Add a short description here",
-    "date": "2015-10-01"
+    "description": "Video of Canopies used for track & field stations at Shelton High School! Special thanks to Shelton High School and Mike Fox for allowing us to come down and film! We had a blast getting these shots at your stadium!",
+    "date": "2014-05-29"
   },
   {
     "type": "vid",

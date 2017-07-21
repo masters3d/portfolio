@@ -37,12 +37,16 @@ function setup(rawData) {
   // Adds the game menu to header
   $('header').first().append(Controller.createMenuHtml())
 
+  // Aside generation
+  Controller.createRecentListOnDOM(projects)
+
   // Handlers
   Controller.handlerForNav()
   Controller.handlerShowAndHide()
+  Controller.handlerShowAndHideAll()
+  Controller.handlerRecentListShowAllName()
+  Controller.handlerRecentListTakeMeToTab()
 
-  // Aside generation
-  Controller.createRecentListOnDOM(projects)
   // hiding all the media sections
   $('.media').hide()
 }
