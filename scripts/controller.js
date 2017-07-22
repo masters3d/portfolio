@@ -75,6 +75,8 @@ Handlebars.registerHelper('mediaCreateHtml',
       }
     } else if (media.source && media.elementType === 'image') {
       toReturn = `<img src="" data-src="${media.source}">`
+    } else if (media.source && media.elementType === 'article' && media.provider === 'medium') {
+      toReturn = toReturn = `<iframe ${videoSize} src="" data-src="${media.id}" frameborder="0" allowfullscreen></iframe>`
     }
     return `<section class="media ${className}">${toReturn}</section>`;
   });
