@@ -2,6 +2,8 @@
 const fs = require('fs')
 const parser = require('xml2json');
 const { StringDecoder } = require('string_decoder');
+const htmlToText = require('html-to-text');
+
 
 /*
   TODO: load from the server instead of local XML. 
@@ -44,7 +46,7 @@ fs.readFile('data/source/medium-feed.xml', function(err, data) {
       description: description,
       date: date,
       media: {
-        source: source,
+        source: htmlToText.fromString(source),
         elementType: 'article',
         id: link ,
         provider: 'medium'

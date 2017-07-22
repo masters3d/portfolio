@@ -60,23 +60,23 @@ Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
   function(media) {
-    let videoSize = 'width="1280" height="720"'
+    let iframeSize = 'width="1280" height="720"'
     let className = ''
     let toReturn = ''
     if (!media.source || media.elementType === 'video'){
       className = 'media-video'
       switch(media.provider){
       case 'vimeo':
-        toReturn = `<iframe ${videoSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${iframeSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
         break;
       case 'youtube':
-        toReturn = `<iframe ${videoSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${iframeSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
         break;
       }
     } else if (media.source && media.elementType === 'image') {
       toReturn = `<img src="" data-src="${media.source}">`
     } else if (media.source && media.elementType === 'article' && media.provider === 'medium') {
-      toReturn = toReturn = `<iframe ${videoSize} src="" data-src="${media.id}" frameborder="0" allowfullscreen></iframe>`
+      toReturn = toReturn = `<iframe ${iframeSize} frameborder="0" allowfullscreen>${media.source}</iframe>`
     }
     return `<section class="media ${className}">${toReturn}</section>`;
   });
