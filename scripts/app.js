@@ -6,7 +6,7 @@
 // Load JSON and popluate the projects data
 $(function() {
   if (Data.load().success){
-    let data = new Data(Data.load().data)     
+    let data = new Data(Data.load().data)
     if (data.isStale()) {
       $.getJSON('data/projects.json', getBlogPosts)
     } else {
@@ -22,6 +22,8 @@ function getBlogPosts(rawData) {
   $.get('data/medium.json', function(data) {
     rawData.projects = rawData.projects.concat(data)
     setupAndSave(rawData)
+  }).catch(function(error){
+    console.error(error)
   })
 }
 
