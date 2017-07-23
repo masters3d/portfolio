@@ -23,8 +23,8 @@ function getBlogPosts(rawData) {
   $.get('data/medium.json', function(data) {
     rawData.projects = rawData.projects.concat(data)
     setupAndSave(rawData)
-  }).catch(function(error){
-    console.error(error)
+  }).catch(function(request){
+    console.error(request)
   })
 }
 
