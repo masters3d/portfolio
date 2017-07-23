@@ -74,9 +74,11 @@ Handlebars.registerHelper('mediaCreateHtml',
         break;
       }
     } else if (media.source && media.elementType === 'image') {
+      className = 'media-image'
       toReturn = `<img src="" data-src="${media.source}">`
     } else if (media.source && media.elementType === 'article' && media.provider === 'medium') {
-      toReturn = toReturn = `<iframe ${iframeSize} frameborder="0" allowfullscreen>${media.source}</iframe>`
+      className = 'media-post-medium'
+      toReturn = toReturn = `<p>${media.source}</p>`
     }
     return `<section class="media ${className}">${toReturn}</section>`;
   });
@@ -119,7 +121,7 @@ Controller.handlerShowAndHide = function() {
     let mediaElemet = mediaContainer.children().first()
     let mediaSource = mediaElemet.attr('data-src') || ''
     if (this.className === 'show') {
-      mediaElemet.attr('src', mediaSource )
+      mediaSource ? mediaElemet.attr('src', mediaSource ) : 'do nothing'
       mediaContainer.fadeIn()
       this.className = 'hide'
     } else if (this.className === 'hide') {

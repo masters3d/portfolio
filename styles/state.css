@@ -1,4 +1,14 @@
 
+
+.media-post-medium p {
+  padding-left: 1em;
+}
+
+.project-card section:last-of-type {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
 .media:hover {
   height: 100%;
   width: 100%; 

@@ -39,6 +39,8 @@ fs.readFile('data/source/medium-feed.xml', function(err, data) {
     let link = each['link']
     let description = each['category']
 
+    let bodyCleanedUp = htmlToText.fromString(source, { ignoreHref: true, preserveNewlines: true, })
+
     let article = {
       type: 'pro',
       name: title,
@@ -46,7 +48,7 @@ fs.readFile('data/source/medium-feed.xml', function(err, data) {
       description: description,
       date: date,
       media: {
-        source: htmlToText.fromString(source),
+        source: bodyCleanedUp.split('\n').join('<br>'),
         elementType: 'article',
         id: link ,
         provider: 'medium'
