@@ -62,6 +62,10 @@ class Data { // eslint-disable-line
   }
 }
 
+Data.prototype.howOldIsCacheInMiliSeconds = function() {
+  return (new Date).getTime() - this.updated.getTime()
+}
+
 Data.prototype.isStale = function() {
   const minutes = 15
   const interval = minutes * 60 * 100

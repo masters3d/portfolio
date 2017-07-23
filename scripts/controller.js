@@ -180,3 +180,8 @@ Controller.handlerRecentListTakeMeToTab = function() {
     window.location.href = anchor;
   })
 }
+/** @param {Data} data */
+Controller.updateCacheAgeOnFooter = function(data) {
+  let seconds = `${data.howOldIsCacheInMiliSeconds()/1000}`
+  $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
+}

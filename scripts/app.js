@@ -7,6 +7,7 @@
 $(function() {
   if (Data.load().success){
     let data = new Data(Data.load().data)
+    setInterval(Controller.updateCacheAgeOnFooter, 1000, data)
     if (data.isStale()) {
       $.getJSON('data/projects.json', getBlogPosts)
     } else {
