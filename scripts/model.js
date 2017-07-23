@@ -96,21 +96,3 @@ Project.prototype.toHtml = function() {
   let html = compiled(this).replace('id="#"', `id="${this.getId()}"`);
   return html;
 };
-
-Data.load = loadLocalStorage
-Data.save = saveLocalStorage
-
-function loadLocalStorage() {
-  let rawData = localStorage.getItem('masters3d');
-  if (rawData !== null) {
-    let data = JSON.parse(rawData)
-    return {success:true, data}
-  } else {
-    return {success:false, data:{}}
-  }
-}
-
-/** @param {Object} data */
-function saveLocalStorage(data) {
-  localStorage.setItem('masters3d', JSON.stringify(data))
-}
