@@ -1,6 +1,8 @@
 'use strict';
 
-let DataController = {}
+class DataController {
+
+}
 
 DataController.load = loadLocalStorage
 DataController.save = saveLocalStorage

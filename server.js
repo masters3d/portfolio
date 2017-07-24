@@ -1,7 +1,12 @@
 'use strict';
 const port = parseInt(process.env.PORT || '3000')
 const express = require('express')
+const cors = require('cors')
 let app = express()
+
+app.options('*', cors())
+
+app.get('*', function(){});
 
 app.use(express.static('.'))
 
