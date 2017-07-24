@@ -46,13 +46,14 @@ Controller.createMenuHtml = function() {
 
 /** @param {string} type */
 Controller.iconTypeClass = function(type){
-  for(let each of Data.menuItems) {
+  return Data.menuItems.reduce((prev, each) => {
+    if (prev) { return prev }
     let [ , category, iconClass] = each.split('|')
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
       return iconClass;
-    }
-  }
-  return ''
+    } else { return prev }
+  },
+  '')
 }
 
 Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
