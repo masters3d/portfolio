@@ -144,7 +144,7 @@ Controller.shorternName = function(name) {
 
 /** @param {Project[]} projects */
 Controller.createRecentListOnDOM = function(projects) {
-  for(let each of projects) {
+  projects.forEach( each => {
     let cloned = $('aside ul li:first-child').clone()
     cloned.find('a').attr('href', '#' + each.getId() )
     cloned.find('a').attr('data-name', each.name)
@@ -153,7 +153,7 @@ Controller.createRecentListOnDOM = function(projects) {
     cloned.find('a').html(Controller.shorternName(each.name))
     cloned.addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
-  }
+  })
   $('aside ul li:first-child').detach()
 }
 
