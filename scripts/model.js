@@ -45,11 +45,11 @@ class Data { // eslint-disable-line
     /** @type {Date} updated */
     this.updated = new Date(jsonData.updated)
     /** @type {Project[]} _projects */
-    let _projects = []
-    for(let each of jsonData.projects) {
-      let project = new Project(each.type, each.name, each.link, each.media, each.description, each.date)
-      _projects.push(project)
-    }
+    let _projects = jsonData.projects.map(
+      /** @param {Object} each */
+      each => {
+        return new Project(each.type, each.name, each.link, each.media, each.description, each.date)
+      })
     this._projects = _projects.sort(function(a, b){
       let dateA = new Date(a.date).getTime()
       let dateB = new Date(b.date).getTime()
