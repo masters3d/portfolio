@@ -13,17 +13,11 @@
     let readme = window.location.search.substr(1)
     // if you call with param it will do readme http://server/requirement.html?readme
     let assigment = readme ? 'README.md' : 'PORTFOLIO-ASSIGNMENT.md'
-    let respos = []
     $.getJSON(`https://api.github.com/orgs/${org}/repos`,
       function(data){
-          for(let each of data) {
-            respos.push(each.name)
-          }
-          respos.sort(function(a, b) {
+          data.map(each => each.name).sort(function(a, b) {
             return a.substring(0,2).localeCompare(b.substring(0,2))
-          })
-
-          for(let each of respos) {
+          }).forEach(each=> {
             let repo = `https://raw.githubusercontent.com/${org}/${each}/master/${assigment}`
             $.get(repo,
               function(data) {
@@ -31,7 +25,7 @@
                 let html = converter.makeHtml(data)
                 $('body').append(`<div style="border-style: solid;">${html}</div>`)
             })
-          }
+          })
       })
       switcher.onclick = function(){
         if (readme) {
