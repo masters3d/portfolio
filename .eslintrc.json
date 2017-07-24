@@ -21,11 +21,12 @@
     "es6": true
   },
   "rules": {
+    "no-var": "error",
     "eqeqeq": ["error", "always"],
     "no-template-curly-in-string": "error",
     "no-console": "off",
     "no-undef": "off",
-    "indent": ["error", 2],
+    "indent": ["warn", 2],
     "quotes": ["warn", "single", {"allowTemplateLiterals": true}],
     "no-multi-spaces": ["warn", {"exceptions": { "VariableDeclarator": true }}],
     "no-trailing-spaces": "warn",

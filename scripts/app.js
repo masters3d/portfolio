@@ -1,26 +1,38 @@
 /// <reference types="jquery" />
+/// <reference types="xml2json"/>
 'use strict';
 
 // Point of Entry of the app
 // Load JSON and popluate the projects data
 $(function() {
-  if (Data.load().success){
-    let data = new Data(Data.load().data)
+  if (DataController.load().success){
+    let data = new Data(DataController.load().data)
+    setInterval(Controller.updateCacheAgeOnFooter, 1000, data)
     if (data.isStale()) {
-      $.getJSON('data/projects.json', setupAndSave)
+      $.getJSON('data/projects.json', getBlogPosts)
     } else {
       setup(data)
     }
   } else {
-    $.getJSON('data/projects.json', setupAndSave)
+    $.getJSON('data/projects.json', getBlogPosts)
   }
 })
+
+/** @param {Object} rawData */
+function getBlogPosts(rawData) {
+  $.get('data/medium.json', function(data) {
+    rawData.projects = rawData.projects.concat(data)
+    setupAndSave(rawData)
+  }).catch(function(request){
+    console.error(request)
+  })
+}
 
 /** @param {Object} rawData */
 function setupAndSave(rawData) {
   setup(rawData)
   rawData.updated = (new Date()).toJSON()
-  Data.save(rawData)
+  DataController.save(rawData)
 }
 
 /** @param {Object} rawData */

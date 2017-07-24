@@ -2,7 +2,7 @@
 /// <reference types="handlebars" />
 'use strict';
 
-var Controller = {}
+let Controller = {}
 
 // Display the date as a relative number of 'days ago' on hover
 Controller.timeHoverRegister = function() { // eslint-disable-line
@@ -60,21 +60,25 @@ Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
   function(media) {
-    let videoSize = 'width="1280" height="720"'
+    let iframeSize = 'width="1280" height="720"'
     let className = ''
     let toReturn = ''
     if (!media.source || media.elementType === 'video'){
       className = 'media-video'
       switch(media.provider){
       case 'vimeo':
-        toReturn = `<iframe ${videoSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${iframeSize} src="" data-src="https://player.vimeo.com/video/${media.id}" frameborder="0" allowfullscreen></iframe>`
         break;
       case 'youtube':
-        toReturn = `<iframe ${videoSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
+        toReturn = `<iframe ${iframeSize} src="" data-src="https://www.youtube.com/embed/${media.id}?ecver=1" frameborder="0" allowfullscreen></iframe>`
         break;
       }
     } else if (media.source && media.elementType === 'image') {
+      className = 'media-image'
       toReturn = `<img src="" data-src="${media.source}">`
+    } else if (media.source && media.elementType === 'article' && media.provider === 'medium') {
+      className = 'media-post-medium'
+      toReturn = toReturn = `<p>${media.source}</p>`
     }
     return `<section class="media ${className}">${toReturn}</section>`;
   });
@@ -117,7 +121,7 @@ Controller.handlerShowAndHide = function() {
     let mediaElemet = mediaContainer.children().first()
     let mediaSource = mediaElemet.attr('data-src') || ''
     if (this.className === 'show') {
-      mediaElemet.attr('src', mediaSource )
+      mediaSource ? mediaElemet.attr('src', mediaSource ) : 'do nothing'
       mediaContainer.fadeIn()
       this.className = 'hide'
     } else if (this.className === 'hide') {
@@ -175,4 +179,9 @@ Controller.handlerRecentListTakeMeToTab = function() {
     showHide.click()
     window.location.href = anchor;
   })
+}
+/** @param {Data} data */
+Controller.updateCacheAgeOnFooter = function(data) {
+  let seconds = `${data.howOldIsCacheInMiliSeconds()/1000}`
+  $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
 }
