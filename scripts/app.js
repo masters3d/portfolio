@@ -40,10 +40,10 @@ function setup(rawData) {
   let data = new Data(rawData)
   let projects = data.projects
   //Add all the articles to the page
-  for (const project of projects){
+  projects.forEach( project => {
     let html = project.toHtml()
     $('#articles').append(html);
-  }
+  })
   // Toggles time shows as days since today
   Controller.timeHoverRegister();
   // Adds the game menu to header

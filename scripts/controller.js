@@ -33,11 +33,11 @@ Controller.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
-  for (let each of Data.menuItems){
+  Data.menuItems.forEach( each => {
     let [title, type, iconclass] = each.split('|')
     type = type.toLowerCase()
     menuObjects.menuItems.push({title, type, iconclass})
-  }
+  })
   let handlebarsTemplateString = jQuery('#handlebarsMenuTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
   let html = compiled(menuObjects);
