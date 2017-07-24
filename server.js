@@ -6,8 +6,6 @@ let app = express()
 
 app.options('*', cors())
 
-app.get('*', function(){});
-
 app.use(express.static('.'))
 
 app.listen(port, function() {

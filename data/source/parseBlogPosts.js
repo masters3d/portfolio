@@ -6,7 +6,7 @@ const htmlToText = require('html-to-text');
 
 
 /*
-  TODO: load from the server instead of local XML. 
+  TODO: load from the server instead of local XML.
   ```
   const https = require('https');
   https.get('https://tech.masters3d.com/feed', function(response) {
