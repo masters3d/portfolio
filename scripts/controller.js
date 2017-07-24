@@ -33,11 +33,11 @@ Controller.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
-  for (let each of Data.menuItems){
+  Data.menuItems.forEach( each => {
     let [title, type, iconclass] = each.split('|')
     type = type.toLowerCase()
     menuObjects.menuItems.push({title, type, iconclass})
-  }
+  })
   let handlebarsTemplateString = jQuery('#handlebarsMenuTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
   let html = compiled(menuObjects);
@@ -46,13 +46,14 @@ Controller.createMenuHtml = function() {
 
 /** @param {string} type */
 Controller.iconTypeClass = function(type){
-  for(let each of Data.menuItems) {
+  return Data.menuItems.reduce((prev, each) => {
+    if (prev) { return prev }
     let [ , category, iconClass] = each.split('|')
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
       return iconClass;
-    }
-  }
-  return ''
+    } else { return prev }
+  },
+  '')
 }
 
 Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
@@ -143,7 +144,7 @@ Controller.shorternName = function(name) {
 
 /** @param {Project[]} projects */
 Controller.createRecentListOnDOM = function(projects) {
-  for(let each of projects) {
+  projects.forEach( each => {
     let cloned = $('aside ul li:first-child').clone()
     cloned.find('a').attr('href', '#' + each.getId() )
     cloned.find('a').attr('data-name', each.name)
@@ -152,7 +153,7 @@ Controller.createRecentListOnDOM = function(projects) {
     cloned.find('a').html(Controller.shorternName(each.name))
     cloned.addClass(Controller.iconTypeClass(each.type))
     $('aside ul').append(cloned)
-  }
+  })
   $('aside ul li:first-child').detach()
 }
 

@@ -31,8 +31,7 @@ fs.readFile('data/source/medium-feed.xml', function(err, data) {
 
   const items = json['rss']['channel']['item']
 
-  let objects = []
-  for (let each of items){
+  let objects = items.map( each => {
     let date = each['atom:updated']
     let source = each['content:encoded']
     let title = each['title']
@@ -54,8 +53,8 @@ fs.readFile('data/source/medium-feed.xml', function(err, data) {
         provider: 'medium'
       },
     }
-    objects.push(article)
-  }
+    return article
+  })
 
   fs.writeFile('data/medium.json',JSON.stringify(objects, null, 2), function(err){
     console.error(err)
