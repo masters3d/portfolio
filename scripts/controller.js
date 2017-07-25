@@ -202,7 +202,6 @@ Controller.getBlogPostLinksAndInsert = function(parent) {
       let items = $(xml).find('item')
       items.each( function(){
         let element = $(this)
-        let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
         let title = cleaningCDATA(element.find('title').first().text())
         let link = cleaningCDATA(element.find('link').first().text())
 
