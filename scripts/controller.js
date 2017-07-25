@@ -33,8 +33,9 @@ Controller.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
-  for (let each of Data.menuItems){
-    let [title, type, iconclass] = each.split('|')
+  for (let type in Data.menuItems){
+    let title = Data.menuItems[type].title
+    let iconclass = Data.menuItems[type].icon
     type = type.toLowerCase()
     menuObjects.menuItems.push({title, type, iconclass})
   }
@@ -46,8 +47,8 @@ Controller.createMenuHtml = function() {
 
 /** @param {string} type */
 Controller.iconTypeClass = function(type){
-  for(let each of Data.menuItems) {
-    let [ , category, iconClass] = each.split('|')
+  for(let category in Data.menuItems) {
+    let iconClass = Data.menuItems[category].icon
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
       return iconClass;
     }
@@ -83,10 +84,11 @@ Handlebars.registerHelper('mediaCreateHtml',
     return `<section class="media ${className}">${toReturn}</section>`;
   });
 
-Controller.pageNavControl = function(tab) {
+/** @param {string} attibute */
+Controller.pageNavControl = function(attibute) {
+  attibute = attibute.toLowerCase()
   $('.tab').removeClass('tabActivated')
   $('article').hide();
-  let attibute = tab.getAttribute('data-type');
   $(`*[data-type="${attibute}"]`).fadeIn();
   $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
   if (attibute === 'hom' || attibute === 'iam') {
@@ -95,15 +97,6 @@ Controller.pageNavControl = function(tab) {
     $('aside a').first().show()
   }
 }
-
-Controller.handlerForNav = function() {
-  let firstTab = $('.tab:first-child')
-  $('nav').on('click', '.tab', function(/**event*/) {
-    let tab = this
-    Controller.pageNavControl(tab)
-  });
-  firstTab.click();
-};
 
 Controller.handlerShowAndHideAll = function() {
   $('aside a').first().on('click', function(event){
@@ -174,15 +167,15 @@ Controller.handlerRecentListShowAllName = function() {
 }
 
 Controller.handlerRecentListTakeMeToTab = function() {
-  $('.asideLink').on('click', function(event){
-    event.preventDefault()
+  $('.asideLink').on('click', function(/*event*/){
     let link = $(this)
     let dataType = link.attr('data-type') || ''
     let anchor = (link.attr('href') || '#')
-    $(`.tab[data-type="${dataType}"]`).first().click()
+    page(`/${Data.menuItems[dataType].title}`)
     let showHide = $(`${anchor}`).children('section').children('a').first()
-    showHide.click()
-    window.location.href = anchor;
+    if(showHide.hasClass('show')) {
+      showHide.click()
+    }
   })
 }
 /** @param {Data} data */
@@ -241,3 +234,10 @@ Controller.getBlogPostsAndCallBack = function(dataCallBack) {
     console.error(request)
   }) // End of AJAX call
 } // End of Main Call
+
+Controller.firstTabAsHomeInit = function(){
+  $('.media').hide()
+  let firstTabAsHome = $('.tab:first-child')
+  firstTabAsHome.attr('href', '/')
+  firstTabAsHome.click()
+}

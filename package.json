@@ -11,6 +11,7 @@
     "@types/html-to-text": "^1.4.30",
     "@types/jquery": "^3.2.8",
     "@types/node": "^8.0.13",
+    "@types/page": "^1.5.32",
     "@types/xml2json": "^0.10.0",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",

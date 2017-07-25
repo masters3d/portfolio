@@ -53,12 +53,11 @@ function setup(rawData) {
   Controller.createRecentListOnDOM(projects)
 
   // Handlers
-  Controller.handlerForNav()
   Controller.handlerShowAndHide()
   Controller.handlerShowAndHideAll()
   Controller.handlerRecentListShowAllName()
   Controller.handlerRecentListTakeMeToTab()
 
-  // hiding all the media sections
-  $('.media').hide()
+  // Clicks the home and repaces link with slash
+  Controller.firstTabAsHomeInit()
 }
