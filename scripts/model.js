@@ -82,12 +82,12 @@ Data.prototype.toJSON = function() {
 }
 
 Data.menuItems = [
-  'Home|HOM|icon-home',
-  'About|IAM|icon-trophy',
-  'Technical|WEB|icon-codepen',
-  'Creative|PRO|icon-mug',
-  'Producer|VID|icon-video-camera',
-  'Developer|APP|icon-rocket',
+  'home|HOM|icon-home',
+  'about|IAM|icon-trophy',
+  'technical|WEB|icon-codepen',
+  'creative|PRO|icon-mug',
+  'producer|VID|icon-video-camera',
+  'developer|APP|icon-rocket',
 ]
 
 Project.prototype.toHtml = function() {

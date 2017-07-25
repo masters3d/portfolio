@@ -98,8 +98,7 @@ Controller.pageNavControl = function(tab) {
 
 Controller.handlerForNav = function() {
   let firstTab = $('.tab:first-child')
-  $('nav').on('click', '.tab', function(event) {
-    event.preventDefault()
+  $('nav').on('click', '.tab', function(/**event*/) {
     let tab = this
     Controller.pageNavControl(tab)
   });

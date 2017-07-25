@@ -17,6 +17,10 @@ header h2 {
   color:black;
 }
 
+header h3 {
+  text-transform: capitalize;
+}
+
 a {
   text-decoration: none;
 }

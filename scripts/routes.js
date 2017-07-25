@@ -2,6 +2,8 @@
 
 'use strict';
 
-page('*', Controller.pageNavControl)
-
+page('*', function(ctx) {
+  console.log(ctx)
+})
+  
 page()
