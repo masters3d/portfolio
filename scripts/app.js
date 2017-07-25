@@ -25,7 +25,7 @@ function getBlogPosts(rawData) {
     function(data) {
       rawData.projects = rawData.projects.concat(data)
       setupAndSave(rawData)
-  })
+    })
 }
 
 /** @param {Object} rawData */
