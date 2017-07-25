@@ -83,20 +83,25 @@ Handlebars.registerHelper('mediaCreateHtml',
     return `<section class="media ${className}">${toReturn}</section>`;
   });
 
+Controller.pageNavControl = function(tab) {
+  $('.tab').removeClass('tabActivated')
+  $('article').hide();
+  let attibute = tab.getAttribute('data-type');
+  $(`*[data-type="${attibute}"]`).fadeIn();
+  $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
+  if (attibute === 'hom' || attibute === 'iam') {
+    $('aside a').first().hide()
+  } else {
+    $('aside a').first().show()
+  }
+}
+
 Controller.handlerForNav = function() {
   let firstTab = $('.tab:first-child')
   $('nav').on('click', '.tab', function(event) {
     event.preventDefault()
-    $('.tab').removeClass('tabActivated')
-    $('article').hide();
-    let attibute = this.getAttribute('data-type');
-    $(`*[data-type="${attibute}"]`).fadeIn();
-    $(`.tab[data-type="${attibute}"]`).addClass('tabActivated')
-    if (attibute === 'hom' || attibute === 'iam') {
-      $('aside a').first().hide()
-    } else {
-      $('aside a').first().show()
-    }
+    let tab = this
+    Controller.pageNavControl(tab)
   });
   firstTab.click();
 };
