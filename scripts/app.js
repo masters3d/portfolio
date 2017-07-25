@@ -20,11 +20,11 @@ $(function() {
 
 /** @param {Object} rawData */
 function getBlogPosts(rawData) {
-  $.get('data/medium.json', function(data) {
-    rawData.projects = rawData.projects.concat(data)
-    setupAndSave(rawData)
-  }).catch(function(request){
-    console.error(request)
+  Controller.getBlogPostsAndCallBack(
+    /** @param {Object} data */
+    function(data) {
+      rawData.projects = rawData.projects.concat(data)
+      setupAndSave(rawData)
   })
 }
 
@@ -61,6 +61,4 @@ function setup(rawData) {
 
   // hiding all the media sections
   $('.media').hide()
-
-  Controller.getBlogPostLinksAndInsert($('article[data-type="hom"]'))
 }

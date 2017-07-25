@@ -76,8 +76,8 @@ Handlebars.registerHelper('mediaCreateHtml',
     } else if (media.source && media.elementType === 'image') {
       className = 'media-image'
       toReturn = `<img src="" data-src="${media.source}">`
-    } else if (media.source && media.elementType === 'article' && media.provider === 'medium') {
-      className = 'media-post-medium'
+    } else if (media.source && media.elementType === 'article') {
+      className = 'media-post'
       toReturn = toReturn = `<p>${media.source}</p>`
     }
     return `<section class="media ${className}">${toReturn}</section>`;
@@ -187,8 +187,8 @@ Controller.updateCacheAgeOnFooter = function(data) {
   $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
 }
 
-/** @param {JQuery<HTMLElement>} parent */
-Controller.getBlogPostLinksAndInsert = function(parent) {
+/** @param {function(Object[]): void} dataCallBack */
+Controller.getBlogPostsAndCallBack = function(dataCallBack) {
   const url = 'https://cors-anywhere.herokuapp.com/https://tech.masters3d.com/feed'
   $.ajax({
     type: 'GET',
@@ -198,6 +198,8 @@ Controller.getBlogPostLinksAndInsert = function(parent) {
       /** @param {string} input */
       let cleaningCDATA = (input) => {return input.replace('<![CDATA[', '').replace(']]>', '')}
 
+      /** @type {Object[]} array */
+      let array = []
       let div = $(document.createElement('div'))
       let items = $(xml).find('item')
       items.each( function(){
@@ -205,13 +207,33 @@ Controller.getBlogPostLinksAndInsert = function(parent) {
         let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
         let title = cleaningCDATA(element.find('title').first().text())
         let link = cleaningCDATA(element.find('link').first().text())
-
-        let a = $(document.createElement('a'))
-        a.attr('href',link)
-        a.text(title)
-        div.append(a)
-      })
-      parent.append(div)
-    }
-  })
-}
+        let pubDate = cleaningCDATA(element.find('pubDate').first().text())
+        let imageLink = contents.find('img').first().attr('src') || ''
+        let article = {
+          type: 'pro', name: title, link: link,
+          description: contents.find('p').first().text(),
+          date: pubDate,
+          media: {
+            source: imageLink, elementType: 'image', id: '' , provider: ''
+          }
+        }
+        //If image has valid ending
+        if (imageLink){
+          let imageLinkParts = imageLink.split('.')
+          let imageLength = imageLinkParts.length
+          if (imageLinkParts.length > 1) {
+            let type = imageLinkParts[imageLength - 1]
+            if ( type === 'jpeg' || type === 'jpeg' ||
+              type === 'gif' || type === 'png') {
+              array.push(article)
+            }
+          }
+        }
+      }
+      )
+      dataCallBack(array)
+    } // End of Success
+  }).catch(function(request){
+    console.error(request)
+  }) // End of AJAX call
+} // End of Main Call
