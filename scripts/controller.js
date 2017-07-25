@@ -187,16 +187,31 @@ Controller.updateCacheAgeOnFooter = function(data) {
   $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
 }
 
-Controller.getBlogPostLinks = function() {
+/** @param {JQuery<HTMLElement>} parent */
+Controller.getBlogPostLinksAndInsert = function(parent) {
   const url = 'https://cors-anywhere.herokuapp.com/https://tech.masters3d.com/feed'
   $.ajax({
     type: 'GET',
     url: url,
     dataType: 'xml',
-    success:   function(xml){
-      console.log(xml)
+    success: function(xml){
+      /** @param {string} input */
+      let cleaningCDATA = (input) => {return input.replace('<![CDATA[', '').replace(']]>', '')}
+
+      let div = $(document.createElement('div'))
       let items = $(xml).find('item')
-      console.log(items)
+      items.each( function(){
+        let element = $(this)
+        let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
+        let title = cleaningCDATA(element.find('title').first().text())
+        let link = cleaningCDATA(element.find('link').first().text())
+
+        let a = $(document.createElement('a'))
+        a.attr('href',link)
+        a.text(title)
+        div.append(a)
+      })
+      parent.append(div)
     }
   })
 }

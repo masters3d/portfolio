@@ -62,5 +62,5 @@ function setup(rawData) {
   // hiding all the media sections
   $('.media').hide()
 
-  Controller.getBlogPostLinks()
+  Controller.getBlogPostLinksAndInsert($('article[data-type="hom"]'))
 }
