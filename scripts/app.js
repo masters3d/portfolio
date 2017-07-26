@@ -62,7 +62,10 @@ function setup(rawData) {
   Controller.firstTabAsHomeInit()
 
   // Other AJAX Calls after site is loaded
-  Controller.getGithubRecentActivity(function(data){
-    console.log(data)
-  })
+
+  NetworkController.getGithubRecentActivity(
+    /** @param {Object} data */
+    function(data){
+      console.log(data)
+    })
 }
