@@ -3,7 +3,7 @@
 class ViewController {
 }
 
-/** 
+/**
  * This method will reach directly into the DOM and update aside List
  * @param {Project[]} projects */
 ViewController.createRecentListOnDOM = function(projects) {
@@ -21,9 +21,9 @@ ViewController.createRecentListOnDOM = function(projects) {
 }
 
 
-/** 
+/**
  * This method will reach directly into the DOM and create
- * the recent activity fetched from github. 
+ * the recent activity fetched from github.
  * These will be inserted into the home page
  * @param {Object[]} activities */
 ViewController.createGithubActivityOnDOM = function(activities){
