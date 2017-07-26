@@ -7,7 +7,10 @@ var ajaxPasswords = ajaxPasswords || { github: ''} // eslint-disable-line no-var
 class NetworkController {
 }
 
-/** @param {function(Object):void} processDataFunc */
+/** 
+ * This will get my current activity on github. It will be authenticated if there 
+ * if ajaxPasswords exist otherwise it will be unathenticated 
+ * @param {function(Object):void} processDataFunc */
 NetworkController.getGithubRecentActivity = function(processDataFunc) {
   let headers = ajaxPasswords.github ? {Authorization: `token ${ajaxPasswords.github}`} : {}
   let url = `https://api.github.com/users/masters3d/events`
@@ -18,7 +21,10 @@ NetworkController.getGithubRecentActivity = function(processDataFunc) {
   })
 }
 
-/** @param {function(Object[]): void} dataCallBack */
+/** 
+ * This will go out and reach to my medium posts and imports them as projects
+ * The post has to have picture in order to be included in my projects
+ * @param {function(Object[]): void} dataCallBack */
 Controller.getBlogPostsAndCallBack = function(dataCallBack) {
   const url = 'https://cors-anywhere.herokuapp.com/https://tech.masters3d.com/feed'
   $.ajax({

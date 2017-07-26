@@ -50,7 +50,7 @@ function setup(rawData) {
   $('header').first().append(Controller.createMenuHtml())
 
   // Aside generation
-  Controller.createRecentListOnDOM(projects)
+  ViewController.createRecentListOnDOM(projects)
 
   // Handlers
   Controller.handlerShowAndHide()
