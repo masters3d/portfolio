@@ -4,6 +4,17 @@
 
 let Controller = {}
 
+/**
+ * This function will return a float value of the
+ * amount of hours since given date
+ * @param {string} dateString */
+Controller.howManyHoursAgo = function(dateString) {
+  const today = new Date()
+  const pastDate = new Date(dateString)
+  const difference = today.getTime() - pastDate.getTime()
+  return parseInt(`${difference/60/60/1000}`) || 0;
+}
+
 // Display the date as a relative number of 'days ago' on hover
 Controller.timeHoverRegister = function() { // eslint-disable-line
   $('span[data-date]').hover(function(){

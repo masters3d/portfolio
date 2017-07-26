@@ -58,14 +58,10 @@ function setup(rawData) {
   Controller.handlerRecentListShowAllName()
   Controller.handlerRecentListTakeMeToTab()
 
+  // Other AJAX Calls after site is loaded
+  NetworkController.getGithubRecentActivity(
+    ViewController.createGithubActivityOnDOM
+  )
   // Clicks the home and repaces link with slash
   Controller.firstTabAsHomeInit()
-
-  // Other AJAX Calls after site is loaded
-
-  NetworkController.getGithubRecentActivity(
-    /** @param {Object} data */
-    function(data){
-      console.log(data)
-    })
-}
+}// End of Setup
