@@ -20,12 +20,12 @@ $(function() {
 
 /** @param {Object} rawData */
 function getBlogPosts(rawData) {
-  $.get('data/medium.json', function(data) {
-    rawData.projects = rawData.projects.concat(data)
-    setupAndSave(rawData)
-  }).catch(function(request){
-    console.error(request)
-  })
+  Controller.getBlogPostsAndCallBack(
+    /** @param {Object} data */
+    function(data) {
+      rawData.projects = rawData.projects.concat(data)
+      setupAndSave(rawData)
+    })
 }
 
 /** @param {Object} rawData */
@@ -53,12 +53,11 @@ function setup(rawData) {
   Controller.createRecentListOnDOM(projects)
 
   // Handlers
-  Controller.handlerForNav()
   Controller.handlerShowAndHide()
   Controller.handlerShowAndHideAll()
   Controller.handlerRecentListShowAllName()
   Controller.handlerRecentListTakeMeToTab()
 
-  // hiding all the media sections
-  $('.media').hide()
+  // Clicks the home and repaces link with slash
+  Controller.firstTabAsHomeInit()
 }

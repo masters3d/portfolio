@@ -36,7 +36,7 @@ class Project {
 }
 
 Project.prototype.getId = function() {
-  return this.name.replace(/ /g,'-').toLowerCase()
+  return this.name.replace(/(")|(`)|( )|(\|)/g ,'-').toLowerCase()
 }
 
 class Data { // eslint-disable-line
@@ -81,14 +81,14 @@ Data.prototype.toJSON = function() {
   return JSON.stringify({updated, projects })
 }
 
-Data.menuItems = [
-  'Home|HOM|icon-home',
-  'About|IAM|icon-trophy',
-  'Technical|WEB|icon-codepen',
-  'Creative|PRO|icon-mug',
-  'Producer|VID|icon-video-camera',
-  'Developer|APP|icon-rocket',
-]
+Data.menuItems = {
+  hom : {title: 'home', icon : 'icon-home' },
+  iam : {title: 'about', icon : 'icon-trophy' },
+  web : {title: 'technical', icon : 'icon-codepen'},
+  pro : {title: 'creative', icon : 'icon-mug'},
+  vid : {title: 'producer', icon : 'icon-video-camera'},
+  app : {title: 'developer', icon : 'icon-rocket'},
+}
 
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();

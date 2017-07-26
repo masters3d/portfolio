@@ -28,7 +28,7 @@
     <h1 class="icon-menu"></h1>
     <nav>
     {{#each menuItems}}
-      <a class="tab" data-icon={{iconclass}} data-type="{{this.type}}" href="#"><h3>{{this.title}}</h3></a>
+      <a class="tab" data-icon={{iconclass}} data-type="{{this.type}}" href="/{{this.title}}"><h3>{{this.title}}</h3></a>
     {{/each}}
     </nav>
     </script>
@@ -65,9 +65,11 @@
     </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/dataController.js"></script>
   <script src="scripts/model.js"></script>
-  <script src="scripts/app.js"></script>
   <script src="scripts/controller.js"></script>
+  <script src="scripts/routes.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>

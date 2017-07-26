@@ -1,7 +1,6 @@
 'use strict';
 
 class DataController {
-
 }
 
 DataController.load = loadLocalStorage
