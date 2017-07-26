@@ -60,4 +60,9 @@ function setup(rawData) {
 
   // Clicks the home and repaces link with slash
   Controller.firstTabAsHomeInit()
+
+  // Other AJAX Calls after site is loaded
+  Controller.getGithubRecentActivity(function(data){
+    console.log(data)
+  })
 }
