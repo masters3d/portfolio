@@ -26,7 +26,7 @@ NetworkController.getGithubRecentActivity = function(processDataFunc) {
  * The post has to have picture in order to be included in my projects
  * @param {function(Object[]): void} dataCallBack */
 Controller.getBlogPostsAndCallBack = function(dataCallBack) {
-  const url = 'https://cors-anywhere.herokuapp.com/https://tech.masters3d.com/feed'
+  const url = '/xml/https://tech.masters3d.com/feed'
   $.ajax({
     type: 'GET',
     url: url,
