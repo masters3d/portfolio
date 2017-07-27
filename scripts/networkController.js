@@ -1,9 +1,6 @@
 
 'use strict';
 
-/** @type {Object} */
-var ajaxPasswords = ajaxPasswords || { github: ''} // eslint-disable-line no-var
-
 class NetworkController {
 }
 
@@ -12,9 +9,8 @@ class NetworkController {
  * if ajaxPasswords exist otherwise it will be unathenticated
  * @param {function(Object[]):void} processDataFunc */
 NetworkController.getGithubRecentActivity = function(processDataFunc) {
-  let headers = ajaxPasswords.github ? {Authorization: `token ${ajaxPasswords.github}`} : {}
-  let url = `https://api.github.com/users/masters3d/events`
-  $.ajax({url, headers}).then(function(data){
+  let url = `/github/https://api.github.com/users/masters3d/events`
+  $.get(url).then(function(data){
     processDataFunc(data)
   }).catch(function(error) {
     console.error(error)

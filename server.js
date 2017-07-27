@@ -17,3 +17,9 @@ app.get('/xml/*', function(request, response) {
     url: `${request.params[0]}`,
   }))(request, response)
 })
+
+app.get('/github/*', function(request, response) {
+  let headers = process.env.GITHUB_TOKEN ? {Authorization: `token ${process.env.GITHUB_TOKEN}`} : {};
+  let url = `${request.params[0]}`;
+  (requestProxy({url, headers}))(request, response)
+})
