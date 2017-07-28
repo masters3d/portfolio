@@ -1,12 +1,12 @@
 'use strict';
 
-class ViewController {
+class ViewHelper {
 }
 
 /**
  * This method will reach directly into the DOM and update aside List
  * @param {Project[]} projects */
-ViewController.createRecentListOnDOM = function(projects) {
+ViewHelper.createRecentListOnDOM = function(projects) {
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
     cloned.find('a').attr('href', '#' + each.getId() )
@@ -26,7 +26,7 @@ ViewController.createRecentListOnDOM = function(projects) {
  * the recent activity fetched from github.
  * These will be inserted into the home page
  * @param {Object[]} activities */
-ViewController.createGithubActivityOnDOM = function(activities){
+ViewHelper.createGithubActivityOnDOM = function(activities){
   let $ul = $(document.createElement('ul'))
   for(let each of activities) {
     let $li = $(document.createElement('li'))
