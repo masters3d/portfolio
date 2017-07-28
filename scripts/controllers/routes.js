@@ -14,11 +14,11 @@ page('*', function(ctx) {
 
   for (let type in Data.menuItems) {
     if (Data.menuItems[type].title === title) {
-      Controller.pageNavControl(type)
+      ViewManager.pageNavControl(type)
       return;
     }
   }
-  Controller.pageNavControl('hom')
+  ViewManager.pageNavControl('hom')
 })
 
 page({click:true, hashbang:false})

@@ -13,8 +13,8 @@ ViewHelper.createRecentListOnDOM = function(projects) {
     cloned.find('a').attr('data-name', each.name)
     cloned.find('a').attr('data-type', each.type)
     cloned.find('a').addClass('asideLink')
-    cloned.find('a').html(Controller.shorternName(each.name))
-    cloned.addClass(Controller.iconTypeClass(each.type))
+    cloned.find('a').html(ViewManager.shorternName(each.name))
+    cloned.addClass(ViewManager.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
   $('aside ul li:first-child').detach()
@@ -31,7 +31,7 @@ ViewHelper.createGithubActivityOnDOM = function(activities){
   for(let each of activities) {
     let $li = $(document.createElement('li'))
     let dateCreated = `${each['created_at']}`
-    let hours = Controller.howManyHoursAgo(dateCreated)
+    let hours = ViewManager.howManyHoursAgo(dateCreated)
     let repoJsonURL = `${each['repo']['url']}`
     let repoName =  `${each['repo']['name']}`
     let type = `${each['type']}`

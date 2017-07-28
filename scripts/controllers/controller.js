@@ -2,13 +2,13 @@
 /// <reference types="handlebars" />
 'use strict';
 
-let Controller = {}
+let ViewManager = {}
 
 /**
  * This function will return a float value of the
  * amount of hours since given date
  * @param {string} dateString */
-Controller.howManyHoursAgo = function(dateString) {
+ViewManager.howManyHoursAgo = function(dateString) {
   const today = new Date()
   const pastDate = new Date(dateString)
   const difference = today.getTime() - pastDate.getTime()
@@ -16,7 +16,7 @@ Controller.howManyHoursAgo = function(dateString) {
 }
 
 // Display the date as a relative number of 'days ago' on hover
-Controller.timeHoverRegister = function() { // eslint-disable-line
+ViewManager.timeHoverRegister = function() { // eslint-disable-line
   $('span[data-date]').hover(function(){
   /** @type {HTMLSpanElement} span */
     const span = this
@@ -40,7 +40,7 @@ Controller.timeHoverRegister = function() { // eslint-disable-line
   })
 }
 
-Controller.createMenuHtml = function() {
+ViewManager.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
@@ -57,7 +57,7 @@ Controller.createMenuHtml = function() {
 }
 
 /** @param {string} type */
-Controller.iconTypeClass = function(type){
+ViewManager.iconTypeClass = function(type){
   for(let category in Data.menuItems) {
     let iconClass = Data.menuItems[category].icon
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
@@ -67,7 +67,7 @@ Controller.iconTypeClass = function(type){
   return ''
 }
 
-Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
+Handlebars.registerHelper('applyIconType', ViewManager.iconTypeClass)
 
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
@@ -96,7 +96,7 @@ Handlebars.registerHelper('mediaCreateHtml',
   });
 
 /** @param {string} attibute */
-Controller.pageNavControl = function(attibute) {
+ViewManager.pageNavControl = function(attibute) {
   attibute = attibute.toLowerCase()
   $('.tab').removeClass('tabActivated')
   $('article').hide();
@@ -109,7 +109,7 @@ Controller.pageNavControl = function(attibute) {
   }
 }
 
-Controller.handlerShowAndHideAll = function() {
+ViewManager.handlerShowAndHideAll = function() {
   $('aside a').first().on('click', function(event){
     event.preventDefault()
     let link = $(this)
@@ -123,7 +123,7 @@ Controller.handlerShowAndHideAll = function() {
   })
 }
 
-Controller.handlerShowAndHide = function() {
+ViewManager.handlerShowAndHide = function() {
   $('.show, .hide').on('click', function(event){
     event.preventDefault()
     let mediaContainer = $(this).parent().siblings('.media')
@@ -141,7 +141,7 @@ Controller.handlerShowAndHide = function() {
 }
 
 /** @param {string} name */
-Controller.shorternName = function(name) {
+ViewManager.shorternName = function(name) {
   let lengthToShorten = 14
   if (name.length < lengthToShorten) {
     return name;
@@ -149,7 +149,7 @@ Controller.shorternName = function(name) {
   return name.substring(0, lengthToShorten) + '...'
 }
 
-Controller.handlerRecentListShowAllName = function() {
+ViewManager.handlerRecentListShowAllName = function() {
   $('.asideLink').hover(function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
@@ -157,11 +157,11 @@ Controller.handlerRecentListShowAllName = function() {
   }, function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
-    link.html(Controller.shorternName(content))
+    link.html(ViewManager.shorternName(content))
   })
 }
 
-Controller.handlerRecentListTakeMeToTab = function() {
+ViewManager.handlerRecentListTakeMeToTab = function() {
   $('.asideLink').on('click', function(/*event*/){
     let link = $(this)
     let dataType = link.attr('data-type') || ''
@@ -174,12 +174,12 @@ Controller.handlerRecentListTakeMeToTab = function() {
   })
 }
 /** @param {Data} data */
-Controller.updateCacheAgeOnFooter = function(data) {
+ViewManager.updateCacheAgeOnFooter = function(data) {
   let seconds = `${data.howOldIsCacheInMiliSeconds()/1000}`
   $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
 }
 
-Controller.firstTabAsHomeInit = function(){
+ViewManager.firstTabAsHomeInit = function(){
   $('.media').hide()
   let firstTabAsHome = $('.tab:first-child')
   firstTabAsHome.attr('href', '/')
