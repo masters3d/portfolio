@@ -50,7 +50,7 @@ function setup(rawData) {
   $('header').first().append(Controller.createMenuHtml())
 
   // Aside generation
-  Controller.createRecentListOnDOM(projects)
+  ViewController.createRecentListOnDOM(projects)
 
   // Handlers
   Controller.handlerShowAndHide()
@@ -58,6 +58,10 @@ function setup(rawData) {
   Controller.handlerRecentListShowAllName()
   Controller.handlerRecentListTakeMeToTab()
 
+  // Other AJAX Calls after site is loaded
+  NetworkController.getGithubRecentActivity(
+    ViewController.createGithubActivityOnDOM
+  )
   // Clicks the home and repaces link with slash
   Controller.firstTabAsHomeInit()
-}
+}// End of Setup
