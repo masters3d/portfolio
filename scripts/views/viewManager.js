@@ -2,7 +2,7 @@
 /// <reference types="handlebars" />
 'use strict';
 
-let ViewManager = {}
+class ViewManager {}
 
 /**
  * This function will return a float value of the

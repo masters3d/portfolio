@@ -1,17 +1,21 @@
 /// <reference types="page" />
 'use strict';
 
-page('*', function(ctx) {
-  let title = (ctx.params[0]).slice(1)
-  let anchorid = ctx.hash || ''
 
+let scrowToArticleOnHashIdMidleware = (ctx, next) => {
+  let anchorid = ctx.hash || ''
   if (anchorid){
     let anchor = '#' + anchorid;
     //https://api.jquery.com/scrollTop/ https://api.jquery.com/offset/
     let offset = ($(anchor).offset() || {top:0}).top
     $('html, body').scrollTop(offset)
   }
+  next()
+}
 
+
+page('*', scrowToArticleOnHashIdMidleware, function(ctx) {
+  let title = (ctx.params[0]).slice(1)
   for (let type in Data.menuItems) {
     if (Data.menuItems[type].title === title) {
       ViewManager.pageNavControl(type)
