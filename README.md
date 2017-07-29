@@ -1,3 +1,6 @@
+The website is live here:
+[masters3d.com](masters3d.com)
+
 # Note to Graders:
 
 * I am using [JSDoc](usejsdoc.org/)

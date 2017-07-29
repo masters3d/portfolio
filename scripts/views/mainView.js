@@ -4,10 +4,10 @@
 
 // Point of Entry of the app
 // Load JSON and popluate the projects data
-$(function() {
+function startUp(){
   if (DataController.load().success){
     let data = new Data(DataController.load().data)
-    setInterval(Controller.updateCacheAgeOnFooter, 1000, data)
+    setInterval(ViewManager.updateCacheAgeOnFooter, 1000, data)
     if (data.isStale()) {
       $.getJSON('data/projects.json', getBlogPosts)
     } else {
@@ -16,11 +16,10 @@ $(function() {
   } else {
     $.getJSON('data/projects.json', getBlogPosts)
   }
-})
-
+}
 /** @param {Object} rawData */
 function getBlogPosts(rawData) {
-  Controller.getBlogPostsAndCallBack(
+  ViewManager.getBlogPostsAndCallBack(
     /** @param {Object} data */
     function(data) {
       rawData.projects = rawData.projects.concat(data)
@@ -45,19 +44,23 @@ function setup(rawData) {
     $('#articles').append(html);
   }
   // Toggles time shows as days since today
-  Controller.timeHoverRegister();
+  ViewManager.timeHoverRegister();
   // Adds the game menu to header
-  $('header').first().append(Controller.createMenuHtml())
+  $('header').first().append(ViewManager.createMenuHtml())
 
   // Aside generation
-  Controller.createRecentListOnDOM(projects)
+  ViewHelper.createRecentListOnDOM(projects)
 
   // Handlers
-  Controller.handlerShowAndHide()
-  Controller.handlerShowAndHideAll()
-  Controller.handlerRecentListShowAllName()
-  Controller.handlerRecentListTakeMeToTab()
+  ViewManager.handlerShowAndHide()
+  ViewManager.handlerShowAndHideAll()
+  ViewManager.handlerRecentListShowAllName()
+  ViewManager.handlerRecentListTakeMeToTab()
 
+  // Other AJAX Calls after site is loaded
+  NetworkController.getGithubRecentActivity(
+    ViewHelper.createGithubActivityOnDOM
+  )
   // Clicks the home and repaces link with slash
-  Controller.firstTabAsHomeInit()
-}
+  ViewManager.firstTabAsHomeInit()
+}// End of Setup

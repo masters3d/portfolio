@@ -44,6 +44,7 @@ class Data { // eslint-disable-line
   constructor(jsonData) {
     /** @type {Date} updated */
     this.updated = new Date(jsonData.updated)
+    this.menuItems = jsonData.menuItems
     /** @type {Project[]} _projects */
     let _projects = []
     for(let each of jsonData.projects) {
@@ -96,3 +97,8 @@ Project.prototype.toHtml = function() {
   let html = compiled(this).replace('id="#"', `id="${this.getId()}"`);
   return html;
 };
+
+if (typeof window === 'undefined') {
+  let menuItems = Data.menuItems
+  module.exports.menuItems = menuItems
+}

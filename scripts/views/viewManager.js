@@ -2,10 +2,21 @@
 /// <reference types="handlebars" />
 'use strict';
 
-let Controller = {}
+class ViewManager {}
+
+/**
+ * This function will return a float value of the
+ * amount of hours since given date
+ * @param {string} dateString */
+ViewManager.howManyHoursAgo = function(dateString) {
+  const today = new Date()
+  const pastDate = new Date(dateString)
+  const difference = today.getTime() - pastDate.getTime()
+  return parseInt(`${difference/60/60/1000}`) || 0;
+}
 
 // Display the date as a relative number of 'days ago' on hover
-Controller.timeHoverRegister = function() { // eslint-disable-line
+ViewManager.timeHoverRegister = function() { // eslint-disable-line
   $('span[data-date]').hover(function(){
   /** @type {HTMLSpanElement} span */
     const span = this
@@ -29,7 +40,7 @@ Controller.timeHoverRegister = function() { // eslint-disable-line
   })
 }
 
-Controller.createMenuHtml = function() {
+ViewManager.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
@@ -46,7 +57,7 @@ Controller.createMenuHtml = function() {
 }
 
 /** @param {string} type */
-Controller.iconTypeClass = function(type){
+ViewManager.iconTypeClass = function(type){
   for(let category in Data.menuItems) {
     let iconClass = Data.menuItems[category].icon
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
@@ -56,7 +67,7 @@ Controller.iconTypeClass = function(type){
   return ''
 }
 
-Handlebars.registerHelper('applyIconType', Controller.iconTypeClass)
+Handlebars.registerHelper('applyIconType', ViewManager.iconTypeClass)
 
 Handlebars.registerHelper('mediaCreateHtml',
 /** @param {Media} media */
@@ -85,7 +96,7 @@ Handlebars.registerHelper('mediaCreateHtml',
   });
 
 /** @param {string} attibute */
-Controller.pageNavControl = function(attibute) {
+ViewManager.pageNavControl = function(attibute) {
   attibute = attibute.toLowerCase()
   $('.tab').removeClass('tabActivated')
   $('article').hide();
@@ -98,7 +109,7 @@ Controller.pageNavControl = function(attibute) {
   }
 }
 
-Controller.handlerShowAndHideAll = function() {
+ViewManager.handlerShowAndHideAll = function() {
   $('aside a').first().on('click', function(event){
     event.preventDefault()
     let link = $(this)
@@ -112,7 +123,7 @@ Controller.handlerShowAndHideAll = function() {
   })
 }
 
-Controller.handlerShowAndHide = function() {
+ViewManager.handlerShowAndHide = function() {
   $('.show, .hide').on('click', function(event){
     event.preventDefault()
     let mediaContainer = $(this).parent().siblings('.media')
@@ -130,7 +141,7 @@ Controller.handlerShowAndHide = function() {
 }
 
 /** @param {string} name */
-Controller.shorternName = function(name) {
+ViewManager.shorternName = function(name) {
   let lengthToShorten = 14
   if (name.length < lengthToShorten) {
     return name;
@@ -138,23 +149,7 @@ Controller.shorternName = function(name) {
   return name.substring(0, lengthToShorten) + '...'
 }
 
-
-/** @param {Project[]} projects */
-Controller.createRecentListOnDOM = function(projects) {
-  for(let each of projects) {
-    let cloned = $('aside ul li:first-child').clone()
-    cloned.find('a').attr('href', '#' + each.getId() )
-    cloned.find('a').attr('data-name', each.name)
-    cloned.find('a').attr('data-type', each.type)
-    cloned.find('a').addClass('asideLink')
-    cloned.find('a').html(Controller.shorternName(each.name))
-    cloned.addClass(Controller.iconTypeClass(each.type))
-    $('aside ul').append(cloned)
-  }
-  $('aside ul li:first-child').detach()
-}
-
-Controller.handlerRecentListShowAllName = function() {
+ViewManager.handlerRecentListShowAllName = function() {
   $('.asideLink').hover(function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
@@ -162,11 +157,11 @@ Controller.handlerRecentListShowAllName = function() {
   }, function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
-    link.html(Controller.shorternName(content))
+    link.html(ViewManager.shorternName(content))
   })
 }
 
-Controller.handlerRecentListTakeMeToTab = function() {
+ViewManager.handlerRecentListTakeMeToTab = function() {
   $('.asideLink').on('click', function(/*event*/){
     let link = $(this)
     let dataType = link.attr('data-type') || ''
@@ -179,63 +174,12 @@ Controller.handlerRecentListTakeMeToTab = function() {
   })
 }
 /** @param {Data} data */
-Controller.updateCacheAgeOnFooter = function(data) {
+ViewManager.updateCacheAgeOnFooter = function(data) {
   let seconds = `${data.howOldIsCacheInMiliSeconds()/1000}`
   $('footer p').html(`Cached ${parseInt(seconds)} Seconds ago`)
 }
 
-/** @param {function(Object[]): void} dataCallBack */
-Controller.getBlogPostsAndCallBack = function(dataCallBack) {
-  const url = 'https://cors-anywhere.herokuapp.com/https://tech.masters3d.com/feed'
-  $.ajax({
-    type: 'GET',
-    url: url,
-    dataType: 'xml',
-    success: function(xml){
-      /** @param {string} input */
-      let cleaningCDATA = (input) => {return input.replace('<![CDATA[', '').replace(']]>', '')}
-
-      /** @type {Object[]} array */
-      let array = []
-      let div = $(document.createElement('div'))
-      let items = $(xml).find('item')
-      items.each( function(){
-        let element = $(this)
-        let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
-        let title = cleaningCDATA(element.find('title').first().text())
-        let link = cleaningCDATA(element.find('link').first().text())
-        let pubDate = cleaningCDATA(element.find('pubDate').first().text())
-        let imageLink = contents.find('img').first().attr('src') || ''
-        let article = {
-          type: 'pro', name: title, link: link,
-          description: contents.find('p').first().text(),
-          date: pubDate,
-          media: {
-            source: imageLink, elementType: 'image', id: '' , provider: ''
-          }
-        }
-        //If image has valid ending
-        if (imageLink){
-          let imageLinkParts = imageLink.split('.')
-          let imageLength = imageLinkParts.length
-          if (imageLinkParts.length > 1) {
-            let type = imageLinkParts[imageLength - 1]
-            if ( type === 'jpeg' || type === 'jpeg' ||
-              type === 'gif' || type === 'png') {
-              array.push(article)
-            }
-          }
-        }
-      }
-      )
-      dataCallBack(array)
-    } // End of Success
-  }).catch(function(request){
-    console.error(request)
-  }) // End of AJAX call
-} // End of Main Call
-
-Controller.firstTabAsHomeInit = function(){
+ViewManager.firstTabAsHomeInit = function(){
   $('.media').hide()
   let firstTabAsHome = $('.tab:first-child')
   firstTabAsHome.attr('href', '/')
