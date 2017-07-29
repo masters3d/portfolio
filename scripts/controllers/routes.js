@@ -19,7 +19,7 @@ let scrowToArticleOnHashIdMidleware = (ctx, next) => {
   next()
 }
 
-page('/', scrowToArticleOnHashIdMidleware, function() { 
+page('/', scrowToArticleOnHashIdMidleware, function() {
   ViewManager.pageNavControl(home)
 })
 
@@ -34,7 +34,7 @@ page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
   ViewManager.pageNavControl(home)
 })
 
-page('*', scrowToArticleOnHashIdMidleware, function() { 
+page('*', scrowToArticleOnHashIdMidleware, function() {
   ViewManager.pageNavControl(home)
 })
 

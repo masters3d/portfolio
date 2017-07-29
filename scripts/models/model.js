@@ -96,3 +96,8 @@ Project.prototype.toHtml = function() {
   let html = compiled(this).replace('id="#"', `id="${this.getId()}"`);
   return html;
 };
+
+if (typeof window === 'undefined') {
+  let menuItems = Data.menuItems
+  module.exports.menuItems = menuItems
+}
