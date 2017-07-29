@@ -4,7 +4,7 @@
 
 // Point of Entry of the app
 // Load JSON and popluate the projects data
-$(function() {
+function startUp(){
   if (DataController.load().success){
     let data = new Data(DataController.load().data)
     setInterval(ViewManager.updateCacheAgeOnFooter, 1000, data)
@@ -16,8 +16,7 @@ $(function() {
   } else {
     $.getJSON('data/projects.json', getBlogPosts)
   }
-})
-
+}
 /** @param {Object} rawData */
 function getBlogPosts(rawData) {
   ViewManager.getBlogPostsAndCallBack(

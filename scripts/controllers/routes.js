@@ -2,7 +2,7 @@
 'use strict';
 
 const home = 'hom';
-
+startUp()
 /** 
  * This middle ware detects any # id on the top of the and mimic native anchor behavior
  * @param {PageJS.Context} ctx 
