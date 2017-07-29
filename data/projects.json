@@ -37,8 +37,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A collection of 3d models created in Luxology Modo",
+      "date": "2008-01-01"
     },
     {
       "type": "pro",
@@ -50,8 +50,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "All the videos I've created uploaded to vimeo",
+      "date": "2008-01-01"
     },
     {
       "type": "vid",
@@ -63,8 +63,8 @@
         "id": "waXta2PAjfc",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Video about the construction project of a church in Guatemala. I did the shooting and little of the editing.",
+      "date": "2015-11-15"
     },
     {
       "type": "vid",
@@ -76,8 +76,8 @@
         "id": "VMkDSfq1ghg",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Video of church building in Guatemala. We build two churches that year.",
+      "date": "2014-11-01"
     },
     {
       "type": "vid",
@@ -89,8 +89,8 @@
         "id": "hMHgUtxMiG8",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Drone footage capture during a quick survey trip to the Phillipines.",
+      "date": "2014-12-12"
     },
     {
       "type": "vid",
@@ -102,8 +102,8 @@
         "id": "64kGSkgOUjU",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A lot of the shots here are mine and I helped with the shooting of the interview.",
+      "date": "2016-02-16"
     },
     {
       "type": "vid",
@@ -115,8 +115,8 @@
         "id": "8qETFdq6UN8",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Filmed the drone footage, a couple of the villedge shots. This video is based on ideas of other private edits we made when I was also an editor in the project.",
+      "date": "2015-01-15"
     },
     {
       "type": "vid",
@@ -128,8 +128,8 @@
         "id": "16NcsqhRhzE",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A couple of wide shots were taken from the drone footage I took. On this trip I was mostly doing logistics. ",
+      "date": "2015-06-15"
     },
     {
       "type": "vid",
@@ -141,8 +141,8 @@
         "id": "fd5OF4I45ak",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Handheld shots along with additional footage not shown in this edit.",
+      "date": "2015-06-08"
     },
     {
       "type": "vid",
@@ -154,8 +154,8 @@
         "id": "1962476",
         "provider": "vimeo"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "After effects video using 3d effects",
+      "date": "2008-10-08"
     },
     {
       "type": "vid",
@@ -167,8 +167,8 @@
         "id": "1960049",
         "provider": "vimeo"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "1080p video using a greenscreen to replace background",
+      "date": "2007-07-01"
     },
     {
       "type": "vid",
@@ -180,8 +180,8 @@
         "id": "1924143",
         "provider": "vimeo"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "The church gave a card away to a pastor working in El Salvador.",
+      "date": "2007-01-01"
     },
     {
       "type": "vid",
@@ -193,8 +193,8 @@
         "id": "wRj1z21ITDI",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Drone footage of comercial for WP product.",
+      "date": "2014-10-01"
     },
     {
       "type": "vid",
@@ -219,8 +219,8 @@
         "id": "1q_1wL522yA",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Camp drone footage of camp in Alaska",
+      "date": "2014-09-26"
     },
     {
       "type": "vid",
@@ -232,8 +232,8 @@
         "id": "3Qz_OsdHruY",
         "provider": "youtube"
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "West Seattle drone footage of fabric building.",
+      "date": "2015-01-28"
     },
     {
       "type": "app",
@@ -245,8 +245,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A collection of all coding projects on github.",
+      "date": "2014-01-29T22:23:33Z"
     },
     {
       "type": "app",
@@ -258,8 +258,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "App to interface with my blog api. This iOS app has authenticaion, data persistance and makes network calls using iOS native interfaces.",
+      "date": "2016-10-01"
     },
     {
       "type": "app",
@@ -271,8 +271,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Mapping APP to showcase persistance and networking caching along with displaying the data on a map",
+      "date": "2016-10-01"
     },
     {
       "type": "app",
@@ -284,8 +284,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Mapping app to showcase the mapping API in iOS devices.",
+      "date": "2016-10-16"
     },
     {
       "type": "app",
@@ -297,8 +297,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Brick breaking game to demostrate the then new SpriteKit gaming API.",
+      "date": "2015-01-05"
     },
     {
       "type": "app",
@@ -310,8 +310,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "This creates photos that can be shared as memes.",
+      "date": "2015-05-12"
     },
     {
       "type": "app",
@@ -323,8 +323,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "iOS app to create voice over effects",
+      "date": "2015-04-01"
     },
     {
       "type": "app",
@@ -336,8 +336,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Java GUI app to desmostrate some of the graphics api avaible cross platform in JAVA.",
+      "date": "2015-11-04"
     },
     {
       "type": "app",
@@ -349,8 +349,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Thisi is a fun text based game of gladiators.",
+      "date": "2015-11-05"
     },
     {
       "type": "app",
@@ -362,8 +362,8 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "This is a JAVA GUI app for demoing the power of the Swing framwork.",
+      "date": "2015-11-01"
     },
     {
       "type": "web",
@@ -440,7 +440,7 @@
         "id": "227545564",
         "provider": "vimeo"
       },
-      "description": "Add a short description here",
+      "description": "This project consist of matching a design image to html elements as much as possible.",
       "date": "2017-06-01"
     }
   ]
