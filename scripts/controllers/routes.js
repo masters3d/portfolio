@@ -24,9 +24,7 @@ page('/', scrowToArticleOnHashIdMidleware, function() {
 
 page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
   let title = ctx.params.tab
-  // TODO: This is unusual. When restoring with out local storage it cant find any of the variable inside pages.js
-  // Not even jQuerry can be found. There is a lot of magical things going on here. 
-  // Only suporting restorting state after the first load but not from a cold start.
+  // Prevent giving an error on a cold start to an specific tab.
   if (!(typeof app === 'undefined' || typeof app.data === 'undefined' || typeof app.data.menuItems === 'undefined')) {
     for (let type in app.data.menuItems) {
       if (app.data.menuItems[type].title === title) {
@@ -36,6 +34,8 @@ page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
     }
   }
   ViewManager.pageNavControl(app.home)
+  // If it can not find a tab name, trigger a reload to kick pages.js into action.
+  location.reload();
 })
 
 page('*', scrowToArticleOnHashIdMidleware, function() {
