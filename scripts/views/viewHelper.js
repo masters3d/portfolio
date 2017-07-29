@@ -7,6 +7,8 @@ class ViewHelper {
  * This method will reach directly into the DOM and update aside List
  * @param {Project[]} projects */
 ViewHelper.createRecentListOnDOM = function(projects) {
+  $('aside ul li:first-child').show()
+  $('.asideLink').remove()
   for(let each of projects) {
     let cloned = $('aside ul li:first-child').clone()
     cloned.find('a').attr('href', '#' + each.getId() )
@@ -17,7 +19,7 @@ ViewHelper.createRecentListOnDOM = function(projects) {
     cloned.addClass(ViewManager.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
-  $('aside ul li:first-child').detach()
+  $('aside ul li:first-child').hide()
 }
 
 /**
@@ -25,7 +27,10 @@ ViewHelper.createRecentListOnDOM = function(projects) {
  * bio based on github on the about page.
  * @param {Object[]} githubUserObj */
 ViewHelper.createGithubBioOnDOM = function(githubUserObj){
+  //Clearing before adding
+  $('.gitHubAbout').remove()
   let $div = $(document.createElement('div'))
+  $div.addClass('gitHubAbout')
   let $p = $(document.createElement('p'))
   let $img = $(document.createElement('img'))
   let location = `${githubUserObj['location']}`

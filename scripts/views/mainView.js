@@ -39,10 +39,17 @@ app.setupAndSave = function(rawData) {
   DataController.save(rawData)
 }
 
+
+
 /** @param {Object} rawData */
 app.setup = function(rawData) {
   let data = new Data(rawData)
+  app.data = data;
   let projects = data.projects
+
+  //Clear our project cards before rebuilding
+  $('.project-card').remove()
+
   //Add all the articles to the page
   for (const project of projects){
     let html = project.toHtml()
