@@ -34,7 +34,6 @@ app.get('/:tab', function (req, res) {
     let tabTitle = menuItems[type].title
     if (tabTitle=== title) {
       res.sendfile('index.html')
-      console.log('Found it')
       return;
     }
   }
