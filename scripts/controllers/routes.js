@@ -2,9 +2,9 @@
 'use strict';
 
 app.startUp()
-/** 
+/**
  * This middle ware detects any # id on the top of the and mimic native anchor behavior
- * @param {PageJS.Context} ctx 
+ * @param {PageJS.Context} ctx
  * @param {function():void} next
 */
 let scrowToArticleOnHashIdMidleware = (ctx, next) => {

@@ -20,7 +20,6 @@ ViewHelper.createRecentListOnDOM = function(projects) {
   $('aside ul li:first-child').detach()
 }
 
-
 /**
  * This method will reach directly into the DOM and create
  * the recent activity fetched from github.
