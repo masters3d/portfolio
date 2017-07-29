@@ -8,8 +8,8 @@ class NetworkController {
  * This will get my current activity on github. It will be authenticated if there
  * if ajaxPasswords exist otherwise it will be unathenticated
  * @param {function(Object[]):void} processDataFunc */
-NetworkController.getGithubRecentActivity = function(processDataFunc) {
-  let url = `/github/https://api.github.com/users/masters3d/events`
+NetworkController.getGithubBio = function(processDataFunc) {
+  let url = `/github/https://api.github.com/users/masters3d`
   $.get(url).then(function(data){
     processDataFunc(data)
   }).catch(function(error) {

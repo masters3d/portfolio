@@ -63,8 +63,8 @@ app.setup = function(rawData) {
   ViewManager.handlerRecentListTakeMeToTab()
 
   // Other AJAX Calls after site is loaded
-  NetworkController.getGithubRecentActivity(
-    ViewHelper.createGithubActivityOnDOM
+  NetworkController.getGithubBio(
+    ViewHelper.createGithubBioOnDOM
   )
   // Clicks the home and repaces link with slash
   ViewManager.firstTabAsHomeInit()
