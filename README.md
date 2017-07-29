@@ -16,3 +16,8 @@ This is a collection of @masters3d creative and technical works.
 ![image](https://user-images.githubusercontent.com/6539412/28237689-3df3dafc-68fa-11e7-854e-d0128aaf95cd.png)
 
 ![image](https://user-images.githubusercontent.com/6539412/28238150-472dae2e-6902-11e7-9845-862049459449.png)
+
+
+![busmall](https://user-images.githubusercontent.com/6539412/28746334-17be9854-743f-11e7-84c7-3ffa78d5a847.gif)
+<img width="803" alt="salmon cookies" src="https://user-images.githubusercontent.com/6539412/28746333-17be5e2a-743f-11e7-8ff6-5c608cb66141.png">
+![about_me](https://user-images.githubusercontent.com/6539412/28746335-17bf0226-743f-11e7-8763-d3e36981aa49.gif)
