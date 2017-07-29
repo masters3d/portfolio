@@ -38,13 +38,14 @@ NetworkController.getBlogPostsAndCallBack = function(dataCallBack) {
       items.each( function(){
         let element = $(this)
         let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
+        let contentsFirstP = ViewManager.shorternString(contents.find('p').first().text(), 100)
         let title = cleaningCDATA(element.find('title').first().text())
         let link = cleaningCDATA(element.find('link').first().text())
         let pubDate = cleaningCDATA(element.find('pubDate').first().text())
         let imageLink = contents.find('img').first().attr('src') || ''
         let article = {
           type: 'pro', name: title, link: link,
-          description: contents.find('p').first().text(),
+          description: contentsFirstP,
           date: pubDate,
           media: {
             source: imageLink, elementType: 'image', id: '' , provider: ''

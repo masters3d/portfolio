@@ -141,8 +141,7 @@ ViewManager.handlerShowAndHide = function() {
 }
 
 /** @param {string} name */
-ViewManager.shorternName = function(name) {
-  let lengthToShorten = 14
+ViewManager.shorternString = function(name, lengthToShorten = 14) {
   if (name.length < lengthToShorten) {
     return name;
   }
@@ -157,7 +156,7 @@ ViewManager.handlerRecentListShowAllName = function() {
   }, function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
-    link.html(ViewManager.shorternName(content))
+    link.html(ViewManager.shorternString(content))
   })
 }
 

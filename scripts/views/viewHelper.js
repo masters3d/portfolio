@@ -15,7 +15,7 @@ ViewHelper.createRecentListOnDOM = function(projects) {
     cloned.find('a').attr('data-name', each.name)
     cloned.find('a').attr('data-type', each.type)
     cloned.find('a').addClass('asideLink')
-    cloned.find('a').html(ViewManager.shorternName(each.name))
+    cloned.find('a').html(ViewManager.shorternString(each.name))
     cloned.addClass(ViewManager.iconTypeClass(each.type))
     $('aside ul').append(cloned)
   }
