@@ -26,7 +26,7 @@
       "icon": "icon-rocket"
     }
   },
-"projects": [
+  "projects": [
     {
       "type": "pro",
       "name": "3D Sketches",
@@ -370,26 +370,13 @@
       "name": "App Engine Wiki Web Server",
       "link": "https://github.com/masters3d/Appengine-Udacity-Blog-Project",
       "media": {
-        "source": "http://lorempixel.com/320/320/?random=0.9938069296855203",
-        "elementType": "image",
-        "id": "",
-        "provider": ""
-      },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
-    },
-    {
-      "type": "web",
-      "name": "Blog Backend API with User Authentication",
-      "link": "http://cheyomasters3d.apppot.com/blog.json",
-      "media": {
         "source": "https://user-images.githubusercontent.com/6539412/28237866-32921a72-68fd-11e7-9ea2-225cefa1368f.gif",
         "elementType": "image",
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Blog Backend API with User Authentication",
+      "date": "2014-03-01"
     },
     {
       "type": "web",
@@ -401,57 +388,57 @@
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A CSS games based on a slot game",
+      "date": "2017-07-01"
     },
     {
       "type": "web",
       "name": "BusMall Shopping App",
       "link": "https://github.com/masters3d/bus-mall",
       "media": {
-        "source": "http://lorempixel.com/320/320/?random=0.10449791757913274",
+        "source": "https://user-images.githubusercontent.com/6539412/28746334-17be9854-743f-11e7-84c7-3ffa78d5a847.gif",
         "elementType": "image",
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Simple web app to select different pictures. It uses localStorage to presist the data.",
+      "date": "2017-06-03"
     },
     {
       "type": "web",
       "name": "Pats Company Site",
       "link": "https://github.com/masters3d/pats_co",
       "media": {
-        "source": "http://lorempixel.com/320/320/?random=0.7198128684322995",
+        "source": "https://user-images.githubusercontent.com/6539412/28746333-17be5e2a-743f-11e7-8ff6-5c608cb66141.png",
         "elementType": "image",
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "A simple webiste for a business in the 2000's",
+      "date": "2017-06-02"
     },
     {
       "type": "web",
       "name": "About Me Game",
       "link": "https://github.com/masters3d/about_me",
       "media": {
-        "source": "http://lorempixel.com/320/320/?random=0.3084017277902895",
+        "source": "https://user-images.githubusercontent.com/6539412/28746335-17bf0226-743f-11e7-8763-d3e36981aa49.gif",
         "elementType": "image",
         "id": "",
         "provider": ""
       },
-      "description": "Add a short description here",
-      "date": "2015-10-01"
+      "description": "Simple Text based games using the promp on JS.",
+      "date": "2017-06-06"
     },
     {
       "type": "web",
       "name": "Image to HTML Sample",
       "link": "https://github.com/masters3d/chocolate_pizza/",
       "media": {
-        "source": "http://lorempixel.com/320/320/?random=0.5650039531591988",
-        "elementType": "image",
-        "id": "",
-        "provider": ""
+        "source": "https://vimeo.com/227545564",
+        "elementType": "video",
+        "id": "227545564",
+        "provider": "vimeo"
       },
       "description": "Add a short description here",
       "date": "2017-06-01"
