@@ -3,6 +3,9 @@ const port = parseInt(process.env.PORT || '3000')
 const express = require('express')
 const requestProxy = require('express-request-proxy')
 const errorResponse = 'Sorry can\'t find that! <a href="/">Go Home</a>'
+const fs = require('fs');
+const projectsJSON = fs.readFileSync('data/projects.json')
+const menuItems = JSON.parse(projectsJSON.toString()).menuItems
 
 let app = express()
 
@@ -25,21 +28,18 @@ app.get('/github/*', function(request, response) {
   (requestProxy({url, headers}))(request, response)
 })
 
-let menuItems = require('./scripts/models/model.js').menuItems
-
 app.get('/:tab', function (req, res) {
   let title = req.params.tab
   for (let type in menuItems) {
     let tabTitle = menuItems[type].title
     if (tabTitle=== title) {
       res.sendfile('index.html')
-      console.log('Found it')
       return;
     }
   }
   res.status(404).send(errorResponse)
 })
 
-app.get('*', function(req, res){
+app.get('*', function( _, res){
   res.status(404).send(errorResponse)
 })

@@ -1,11 +1,10 @@
 /// <reference types="page" />
 'use strict';
 
-const home = 'hom';
-startUp()
-/** 
+app.startUp()
+/**
  * This middle ware detects any # id on the top of the and mimic native anchor behavior
- * @param {PageJS.Context} ctx 
+ * @param {PageJS.Context} ctx
  * @param {function():void} next
 */
 let scrowToArticleOnHashIdMidleware = (ctx, next) => {
@@ -20,22 +19,27 @@ let scrowToArticleOnHashIdMidleware = (ctx, next) => {
 }
 
 page('/', scrowToArticleOnHashIdMidleware, function() {
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
 })
 
 page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
   let title = ctx.params.tab
-  for (let type in Data.menuItems) {
-    if (Data.menuItems[type].title === title) {
-      ViewManager.pageNavControl(type)
-      return;
+  // Prevent giving an error on a cold start to an specific tab.
+  if (!(typeof app === 'undefined' || typeof app.data === 'undefined' || typeof app.data.menuItems === 'undefined')) {
+    for (let type in app.data.menuItems) {
+      if (app.data.menuItems[type].title === title) {
+        ViewManager.pageNavControl(type)
+        return;
+      }
     }
   }
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
+  // If it can not find a tab name, trigger a reload to kick pages.js into action.
+  location.reload();
 })
 
 page('*', scrowToArticleOnHashIdMidleware, function() {
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
 })
 
 page({click:true, hashbang:false})

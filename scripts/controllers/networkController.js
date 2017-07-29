@@ -8,8 +8,8 @@ class NetworkController {
  * This will get my current activity on github. It will be authenticated if there
  * if ajaxPasswords exist otherwise it will be unathenticated
  * @param {function(Object[]):void} processDataFunc */
-NetworkController.getGithubRecentActivity = function(processDataFunc) {
-  let url = `/github/https://api.github.com/users/masters3d/events`
+NetworkController.getGithubBio = function(processDataFunc) {
+  let url = `/github/https://api.github.com/users/masters3d`
   $.get(url).then(function(data){
     processDataFunc(data)
   }).catch(function(error) {
@@ -21,7 +21,7 @@ NetworkController.getGithubRecentActivity = function(processDataFunc) {
  * This will go out and reach to my medium posts and imports them as projects
  * The post has to have picture in order to be included in my projects
  * @param {function(Object[]): void} dataCallBack */
-ViewManager.getBlogPostsAndCallBack = function(dataCallBack) {
+NetworkController.getBlogPostsAndCallBack = function(dataCallBack) {
   const url = '/xml/https://tech.masters3d.com/feed'
   $.ajax({
     type: 'GET',
@@ -38,13 +38,14 @@ ViewManager.getBlogPostsAndCallBack = function(dataCallBack) {
       items.each( function(){
         let element = $(this)
         let contents = div.clone().html(cleaningCDATA(element.children().last().text()))
+        let contentsFirstP = ViewManager.shorternString(contents.find('p').first().text(), 100)
         let title = cleaningCDATA(element.find('title').first().text())
         let link = cleaningCDATA(element.find('link').first().text())
         let pubDate = cleaningCDATA(element.find('pubDate').first().text())
         let imageLink = contents.find('img').first().attr('src') || ''
         let article = {
           type: 'pro', name: title, link: link,
-          description: contents.find('p').first().text(),
+          description: contentsFirstP,
           date: pubDate,
           media: {
             source: imageLink, elementType: 'image', id: '' , provider: ''

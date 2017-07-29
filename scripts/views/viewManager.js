@@ -44,9 +44,9 @@ ViewManager.createMenuHtml = function() {
   let menuObjects = {}
   // menuItems is the name expected by handlebars on the template
   menuObjects.menuItems = []
-  for (let type in Data.menuItems){
-    let title = Data.menuItems[type].title
-    let iconclass = Data.menuItems[type].icon
+  for (let type in app.data.menuItems){
+    let title = app.data.menuItems[type].title
+    let iconclass = app.data.menuItems[type].icon
     type = type.toLowerCase()
     menuObjects.menuItems.push({title, type, iconclass})
   }
@@ -58,8 +58,8 @@ ViewManager.createMenuHtml = function() {
 
 /** @param {string} type */
 ViewManager.iconTypeClass = function(type){
-  for(let category in Data.menuItems) {
-    let iconClass = Data.menuItems[category].icon
+  for(let category in app.data.menuItems) {
+    let iconClass = app.data.menuItems[category].icon
     if (category.toLocaleLowerCase() === type.toLocaleLowerCase()) {
       return iconClass;
     }
@@ -141,8 +141,7 @@ ViewManager.handlerShowAndHide = function() {
 }
 
 /** @param {string} name */
-ViewManager.shorternName = function(name) {
-  let lengthToShorten = 14
+ViewManager.shorternString = function(name, lengthToShorten = 14) {
   if (name.length < lengthToShorten) {
     return name;
   }
@@ -157,7 +156,7 @@ ViewManager.handlerRecentListShowAllName = function() {
   }, function(){
     let link = $(this)
     let content = link.attr('data-name') || ''
-    link.html(ViewManager.shorternName(content))
+    link.html(ViewManager.shorternString(content))
   })
 }
 
@@ -166,7 +165,7 @@ ViewManager.handlerRecentListTakeMeToTab = function() {
     let link = $(this)
     let dataType = link.attr('data-type') || ''
     let anchor = (link.attr('href') || '#')
-    page(`/${Data.menuItems[dataType].title}`)
+    page(`/${app.data.menuItems[dataType].title}`)
     let showHide = $(`${anchor}`).children('section').children('a').first()
     if(showHide.hasClass('show')) {
       showHide.click()
