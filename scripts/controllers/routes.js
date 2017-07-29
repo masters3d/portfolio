@@ -1,7 +1,6 @@
 /// <reference types="page" />
 'use strict';
 
-const home = 'hom';
 app.startUp()
 /** 
  * This middle ware detects any # id on the top of the and mimic native anchor behavior
@@ -20,7 +19,7 @@ let scrowToArticleOnHashIdMidleware = (ctx, next) => {
 }
 
 page('/', scrowToArticleOnHashIdMidleware, function() {
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
 })
 
 page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
@@ -31,11 +30,11 @@ page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
       return;
     }
   }
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
 })
 
 page('*', scrowToArticleOnHashIdMidleware, function() {
-  ViewManager.pageNavControl(home)
+  ViewManager.pageNavControl(app.home)
 })
 
 page({click:true, hashbang:false})

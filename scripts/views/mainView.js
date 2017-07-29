@@ -4,6 +4,7 @@
 
 /** @type {Object} */
 var app = app || {}; // eslint-disable-line
+app.home = 'hom';
 
 // Point of Entry of the app
 // Load JSON and popluate the projects data
@@ -13,33 +14,33 @@ app.startUp = function(){ // eslint-disable-line
     app.data = data
     setInterval(ViewManager.updateCacheAgeOnFooter, 1000, data)
     if (data.isStale()) {
-      $.getJSON('data/projects.json', getBlogPosts)
+      $.getJSON('data/projects.json', app.getBlogPosts)
     } else {
-      setup(data)
+      app.setup(data)
     }
   } else {
-    $.getJSON('data/projects.json', getBlogPosts)
+    $.getJSON('data/projects.json', app.getBlogPosts)
   }
 }
 /** @param {Object} rawData */
-function getBlogPosts(rawData) {
+app.getBlogPosts = function(rawData) {
   NetworkController.getBlogPostsAndCallBack(
     /** @param {Object} data */
     function(data) {
       rawData.projects = rawData.projects.concat(data)
-      setupAndSave(rawData)
+      app.setupAndSave(rawData)
     })
 }
 
 /** @param {Object} rawData */
-function setupAndSave(rawData) {
-  setup(rawData)
+app.setupAndSave = function(rawData) {
+  app.setup(rawData)
   rawData.updated = (new Date()).toJSON()
   DataController.save(rawData)
 }
 
 /** @param {Object} rawData */
-function setup(rawData) {
+app.setup = function(rawData) {
   let data = new Data(rawData)
   let projects = data.projects
   //Add all the articles to the page
