@@ -2,7 +2,7 @@
 'use strict';
 
 const home = 'hom';
-startUp()
+app.startUp()
 /** 
  * This middle ware detects any # id on the top of the and mimic native anchor behavior
  * @param {PageJS.Context} ctx 
@@ -25,8 +25,8 @@ page('/', scrowToArticleOnHashIdMidleware, function() {
 
 page('/:tab', scrowToArticleOnHashIdMidleware, function(ctx) {
   let title = ctx.params.tab
-  for (let type in Data.menuItems) {
-    if (Data.menuItems[type].title === title) {
+  for (let type in app.data.menuItems) {
+    if (app.data.menuItems[type].title === title) {
       ViewManager.pageNavControl(type)
       return;
     }

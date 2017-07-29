@@ -2,11 +2,15 @@
 /// <reference types="xml2json"/>
 'use strict';
 
+/** @type {Object} */
+var app = app || {}; // eslint-disable-line
+
 // Point of Entry of the app
 // Load JSON and popluate the projects data
-function startUp(){
+app.startUp = function(){ // eslint-disable-line
   if (DataController.load().success){
     let data = new Data(DataController.load().data)
+    app.data = data
     setInterval(ViewManager.updateCacheAgeOnFooter, 1000, data)
     if (data.isStale()) {
       $.getJSON('data/projects.json', getBlogPosts)
@@ -19,7 +23,7 @@ function startUp(){
 }
 /** @param {Object} rawData */
 function getBlogPosts(rawData) {
-  ViewManager.getBlogPostsAndCallBack(
+  NetworkController.getBlogPostsAndCallBack(
     /** @param {Object} data */
     function(data) {
       rawData.projects = rawData.projects.concat(data)

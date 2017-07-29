@@ -82,23 +82,9 @@ Data.prototype.toJSON = function() {
   return JSON.stringify({updated, projects })
 }
 
-Data.menuItems = {
-  hom : {title: 'home', icon : 'icon-home' },
-  iam : {title: 'about', icon : 'icon-trophy' },
-  web : {title: 'technical', icon : 'icon-codepen'},
-  pro : {title: 'creative', icon : 'icon-mug'},
-  vid : {title: 'producer', icon : 'icon-video-camera'},
-  app : {title: 'developer', icon : 'icon-rocket'},
-}
-
 Project.prototype.toHtml = function() {
   let handlebarsTemplateString = jQuery('#handlebarsTemplate').html();
   let compiled = Handlebars.compile(handlebarsTemplateString);
   let html = compiled(this).replace('id="#"', `id="${this.getId()}"`);
   return html;
 };
-
-if (typeof window === 'undefined') {
-  let menuItems = Data.menuItems
-  module.exports.menuItems = menuItems
-}
