@@ -50,7 +50,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "All the videos I've created uploaded to vimeo",
+      "description": "All the videos I've created uploaded to Vimeo",
       "date": "2008-01-01"
     },
     {
@@ -115,7 +115,7 @@
         "id": "8qETFdq6UN8",
         "provider": "youtube"
       },
-      "description": "Filmed the drone footage, a couple of the villedge shots. This video is based on ideas of other private edits we made when I was also an editor in the project.",
+      "description": "Filmed the drone footage, a couple of the village shots. This video is based on ideas of other private edits we made when I was also an editor in the project.",
       "date": "2015-01-15"
     },
     {
@@ -167,7 +167,7 @@
         "id": "1960049",
         "provider": "vimeo"
       },
-      "description": "1080p video using a greenscreen to replace background",
+      "description": "1080p video using a green-screen to replace background",
       "date": "2007-07-01"
     },
     {
@@ -193,7 +193,7 @@
         "id": "wRj1z21ITDI",
         "provider": "youtube"
       },
-      "description": "Drone footage of comercial for WP product.",
+      "description": "Drone footage of commercial for WP product.",
       "date": "2014-10-01"
     },
     {
@@ -258,7 +258,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "App to interface with my blog api. This iOS app has authenticaion, data persistance and makes network calls using iOS native interfaces.",
+      "description": "App to interface with my blog api. This iOS app has authentication, data persistence and makes network calls using iOS native interfaces.",
       "date": "2016-10-01"
     },
     {
@@ -271,7 +271,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Mapping APP to showcase persistance and networking caching along with displaying the data on a map",
+      "description": "Mapping APP to showcase persistence and networking caching along with displaying the data on a map",
       "date": "2016-10-01"
     },
     {
@@ -297,7 +297,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Brick breaking game to demostrate the then new SpriteKit gaming API.",
+      "description": "Brick breaking game to demonstrate the then new SpriteKit gaming API.",
       "date": "2015-01-05"
     },
     {
@@ -336,7 +336,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Java GUI app to desmostrate some of the graphics api avaible cross platform in JAVA.",
+      "description": "Java GUI app to demonstrate some of the graphics api available cross platform in JAVA.",
       "date": "2015-11-04"
     },
     {
@@ -349,7 +349,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Thisi is a fun text based game of gladiators.",
+      "description": "This is a fun text based game of gladiators.",
       "date": "2015-11-05"
     },
     {
@@ -362,7 +362,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "This is a JAVA GUI app for demoing the power of the Swing framwork.",
+      "description": "This is a JAVA GUI app for demoing the power of the Swing framework.",
       "date": "2015-11-01"
     },
     {
@@ -401,7 +401,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Simple web app to select different pictures. It uses localStorage to presist the data.",
+      "description": "Simple web app to select different pictures. It uses localStorage to persist the data.",
       "date": "2017-06-03"
     },
     {
@@ -414,7 +414,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "A simple webiste for a business in the 2000's",
+      "description": "A simple website for a business in the 2000's",
       "date": "2017-06-02"
     },
     {
@@ -427,7 +427,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "Simple Text based games using the promp on JS.",
+      "description": "Simple Text based games using the prompt on JS.",
       "date": "2017-06-06"
     },
     {
