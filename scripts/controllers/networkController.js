@@ -44,7 +44,7 @@ NetworkController.getBlogPostsAndCallBack = function(dataCallBack) {
         let pubDate = cleaningCDATA(element.find('pubDate').first().text())
         let imageLink = contents.find('img').first().attr('src') || ''
         let article = {
-          type: 'pro', name: title, link: link,
+          type: 'pro', name: ViewManager.shorternString(title, 30), link: link,
           description: contentsFirstP,
           date: pubDate,
           media: {
