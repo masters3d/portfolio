@@ -159,6 +159,32 @@
     },
     {
       "type": "vid",
+      "name": "Tvida Vision Green Screen FX",
+      "link": "https://vimeo.com/1960084",
+      "media": {
+        "source": "https://player.vimeo.com/video/1960084",
+        "elementType": "video",
+        "id": "1960084",
+        "provider": "vimeo"
+      },
+      "description": "This was done with each individual being recorded in a green screen then composed together in after effects. This was one of my special effects done in low resolution and then composed in HD with a digital background.",
+      "date": "2007-07-02"
+    },
+    {
+      "type": "vid",
+      "name": "Updated Masters Promo",
+      "link": "https://vimeo.com/1962480",
+      "media": {
+        "source": "https://player.vimeo.com/video/1962480",
+        "elementType": "video",
+        "id": "1962480",
+        "provider": "vimeo"
+      },
+      "description": "Promo video for a group of kids who would go around making dramas and motivational speeches in churches and school assemblies. It was very fun and I got to travel a lot around California. I did this for about 4 years",
+      "date": "2007-07-01"
+    },
+    {
+      "type": "vid",
       "name": "TVida Vision",
       "link": "https://vimeo.com/1960049",
       "media": {
@@ -167,7 +193,7 @@
         "id": "1960049",
         "provider": "vimeo"
       },
-      "description": "1080p video using a green-screen to replace background",
+      "description": "I did a summer internship at a local TV Station. This is before HD cameras were popular and we shot everything on tape. I loved my time there. Everything was new. Shooting live TV was new to me. I shot my first 1080p video using a green-screen to replace background for this video.",
       "date": "2007-07-01"
     },
     {
@@ -349,7 +375,7 @@
         "id": "",
         "provider": ""
       },
-      "description": "This is a fun text based game of gladiators.",
+      "description": "This is a fun text based game of gladiators. This reminded me of my experience with linux during HS when I was hacking the original xbox to run linux Gentoox. I also remember running linux on my Sony PS2 using the swappable hard drive.  I didn't know how much I didn't know back then. I knew how to ping other servers but that was about it.",
       "date": "2015-11-05"
     },
     {

@@ -36,7 +36,7 @@ class Project {
 }
 
 Project.prototype.getId = function() {
-  return this.name.replace(/(")|(`)|( )|(\|)/g ,'-').toLowerCase()
+  return this.name.replace(/[^a-zA-Z0-9-]/g ,'-').toLowerCase()
 }
 
 class Data { // eslint-disable-line
