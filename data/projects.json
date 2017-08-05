@@ -445,6 +445,19 @@
     },
     {
       "type": "web",
+      "name": "CodeFlicks",
+      "link": "https://codeflicks.herokuapp.com/",
+      "media": {
+        "source": "https://vimeo.com/228456787",
+        "elementType": "video",
+        "id": "228456787",
+        "provider": "vimeo"
+      },
+      "description": "App that uses Slack and MovieDB API to help a classroom choose a movie together.",
+      "date": "2017-08-04"
+    },
+    {
+      "type": "web",
       "name": "About Me Game",
       "link": "https://github.com/masters3d/about_me",
       "media": {
