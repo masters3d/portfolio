@@ -22,7 +22,7 @@ NetworkController.getGithubBio = function(processDataFunc) {
  * The post has to have picture in order to be included in my projects
  * @param {function(Object[]): void} dataCallBack */
 NetworkController.getBlogPostsAndCallBack = function(dataCallBack) {
-  const url = '/xml/https://tech.masters3d.com/feed'
+  const url = 'https://tech.masters3d.com/feed'
   $.ajax({
     type: 'GET',
     url: url,
