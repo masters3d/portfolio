@@ -18,7 +18,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-request-proxy": "^2.2.2",
-    "html-to-text": "^3.3.0",
+    "html-to-text": "^9.0.4",
     "page": "^1.11.6",
     "through2": "^2.0.5",
     "xml2json": "^0.11.2"
